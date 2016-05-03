@@ -55,7 +55,7 @@
 					<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
 						<div class="form-group">
 							<div class="input-group">
-								<input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
+								<input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
 								<span class="input-group-btn">
 								<button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
 								</span>
@@ -242,10 +242,7 @@
 			<!-- content -->
 			<div id="content" class="app-content" role="main">
 				<div class="app-content-body ">
-					<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
-						app.settings.asideFolded = false; 
-						app.settings.asideDock = false;
-						">
+					<div class="hbox hbox-auto-xs hbox-auto-sm">
 						<!-- main -->
 						<div class="col">
 							<!-- main header -->
@@ -258,7 +255,7 @@
 									<div class="col-sm-6 text-right hidden-xs">
 										<div class="inline m-r text-left">
 											<div class="m-b-xs">1290 <span class="text-muted">items</span></div>
-											<div ng-init="d3_1=[ 106,108,110,105,110,109,105,104,107,109,105,100,105,102,101,99,98 ]" 
+											<div 
 												ui-jq="sparkline" 
 												ui-options="[ 106,108,110,105,110,109,105,104,107,109,105,100,105,102,101,99,98 ], {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}" 
 												class="sparkline inline">loading...
@@ -266,7 +263,7 @@
 										</div>
 										<div class="inline text-left">
 											<div class="m-b-xs">30,000 <span class="text-muted">logs</span></div>
-											<div ng-init="d3_2=[ 105,102,106,107,105,104,101,99,98,109,105,100,108,110,105,110,109 ]" 
+											<div  
 												ui-jq="sparkline" 
 												ui-options="[ 105,102,106,107,105,104,101,99,98,109,105,100,108,110,105,110,109 ], {type:'bar', height:20, barWidth:5, barSpacing:1, barColor:'#dce5ec'}" 
 												class="sparkline inline">loading...
@@ -276,7 +273,7 @@
 								</div>
 							</div>
 							<!-- / main header -->
-							<div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+							<div class="wrapper-md">
 								<!-- stats -->
 								<div class="row">
 									<div class="col-md-5">
@@ -320,7 +317,7 @@
 											<div class="col-xs-12 m-b-md">
 												<div class="r bg-light dker item hbox no-border">
 													<div class="col w-xs v-middle hidden-md">
-														<div ng-init="d3_3=[60,40]" ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline"></div>
+														<div ui-jq="sparkline" ui-options="[60,40], {type:'pie', height:40, sliceColors:['#fad733','#fff']}" class="sparkline inline"></div>
 													</div>
 													<div class="col dk padder-v r-r">
 														<div class="text-primary-dk font-thin h1"><span>34 new</span></div>
