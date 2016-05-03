@@ -177,9 +177,11 @@
                <nav ui-nav class="navi clearfix">
                   <ul class="nav">
                      <li class="line dk"></li>
+<!--
                      <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                         <span>Menu</span>
                      </li>
+-->
                      <li>
                         <a href="index.html">
                         <i class="glyphicon glyphicon-th icon text-info-lter"></i>
@@ -206,9 +208,11 @@
                      </li>
                      </a>
                      <li class="line dk"></li>
+<!--
                      <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
                         <span>Your Stuff</span>
                      </li>
+-->
                      <li>
                         <a href="page_profile.html">
                            <i class="icon-user icon text-success-lter"></i>
@@ -240,20 +244,20 @@
       <div id="content" class="app-content" role="main">
          <div class="app-content-body ">
             <div class="bg-light lter b-b wrapper-md">
-               <h1 class="m-n font-thin h3">Dashboard</h1>
+               <h1 class="m-n font-thin h3"><strong>Dashboard</strong></h1>
             </div>
             <div class="panel panel-default">
                <div id="logsmenu" class="panel-heading font-bold">                  
                   Choose Types of Log
                </div>
-               <div class="panel-body">
+               <div style="background-color:#FECE1A;" class="panel-body">
                   <div class="wrapper-md">
                      <div class="row">
                         <div class="col-sm-3 col-sm-offset-3">
-                           <button onclick="openFirewall()" id="fireWall" class="btn btn-info btn-lg">Firewall Logs</button>
+                           <button onclick="openFirewall()" id="fireWall" class="btn btn-info btn-lg"><strong>Firewall Logs</strong></button>
                         </div>
                         <div class="col-sm-5 col-sm-offset-1">
-                           <button onclick="openAuth()" id="auth" class="btn btn-success btn-lg">Authentication Logs</button>
+                           <button onclick="openAuth()" id="auth" class="btn btn-success btn-lg"><strong>Authentication Logs</strong></button>
                         </div>
                      </div>
                   </div>
@@ -261,9 +265,9 @@
             </div>
             <!-- -->
             <div id="details1" class="panel panel-default" style="display:block">
-               <div class="panel-heading font-bold">                  
+               <div id="enter_the_details1" class="panel-heading font-bold"><center>                  
                   Enter the Details
-               </div>
+               </center></div>
                <div class="panel-body">
                   <div class="wrapper-md">
                      <div class="row">
@@ -285,16 +289,19 @@
                         </div>
                      </div>
                      <br>
-                     <div class="row">
+                     <div class="row"><center>
                         <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default">Enter</button>
+						 </center>
                      </div>
                   </div>
                   <br>
                </div>
             </div>
             <div id="details2" class="panel panel-default" style="display:none">
-               <div class="panel-heading font-bold">                  
-                  Enter the Details
+               <div id="enter_the_details2" class="panel-heading font-bold">   
+                  <center>
+				   Enter the Details
+					  </center>
                </div>
                <div class="panel-body">
                   <div class="wrapper-md">
