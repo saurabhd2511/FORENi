@@ -52,7 +52,7 @@
 					</div>
 					<!-- / buttons -->
 					<!-- search form -->
-					<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+					<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
 						<div class="form-group">
 							<div class="input-group">
 								<input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
@@ -193,12 +193,6 @@
 									<a href="dashboard.html">
 									<i class="glyphicon glyphicon-list-alt icon text-info-lter"></i>
 									<span class="font-bold">Dashboard</span>
-									</a>
-								</li>
-								<li>
-									<a href="ui_chart.html">
-									<i class="glyphicon glyphicon-stats icon text-info-lter"></i>
-									<span class="font-bold">Summary</span>
 									</a>
 								</li>
 								<li>

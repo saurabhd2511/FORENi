@@ -54,10 +54,10 @@
 
 
         <!-- search form -->
-        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
+              <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
               </span>
@@ -190,9 +190,7 @@
           <nav ui-nav class="navi clearfix">
             <ul class="nav">
               <li class="line dk"></li>
-              <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                <span>Menu</span>
-              </li>
+              
 
             
                <li>
@@ -207,12 +205,7 @@
                   <span class="font-bold">Dashboard</span>
                 </a>
               </li>
-              <li>
-                <a href="ui_chart.html">
-                  <i class="glyphicon glyphicon-stats icon text-info-lter"></i>
-                  <span class="font-bold">Summary</span>
-                </a>
-              </li>
+             
               <li>
                 <a href="page_search.html">
                   <i class="glyphicon glyphicon-search icon text-info-lter"></i>
@@ -224,9 +217,7 @@
 
              
               
-              <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
-                <span>Your Stuff</span>
-              </li>  
+              
               <li>
                 <a href="page_profile.html">
                   <i class="icon-user icon text-success-lter"></i>
@@ -261,7 +252,7 @@
   	<div class="app-content-body ">
 	    
 
-	<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="MailCtrl">
+	<div class="hbox hbox-auto-xs hbox-auto-sm">
 	  <div class="col w-md bg-light dk b-r bg-auto">
 	    <div class="wrapper b-b bg">
 	      <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" ui-toggle="show" target="#email-menu"><i class="fa fa-bars"></i></button>
@@ -334,7 +325,7 @@
 	      <ul class="list-group list-group-lg no-radius m-b-none m-t-n-xxs">
 	        <li class="list-group-item clearfix b-l-3x b-l-info">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a10.jpg" src="img/a10.jpg">
+	            <img src="img/a10.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
@@ -347,11 +338,11 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x b-l-primary">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a9.jpg" src="img/a9.jpg">
+	            <img src="img/a9.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
-	            <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+	            <i class="fa fa-paperclip m-l-sm"></i>
 	          </div>
 	          <div class="clear">
 	            <div><a  class="text-md " href="#/app/mail/9">Bootstrap components written in pure AngularJS</a><span class="label bg-light m-l-sm ">bootstrap</span></div>
@@ -360,7 +351,7 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x b-l-info">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a1.jpg" src="img/a1.jpg">
+	            <img src="img/a1.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
@@ -373,11 +364,11 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x b-l-info">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a2.jpg" src="img/a2.jpg">
+	            <img src="img/a2.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
-	            <i class="fa fa-paperclip ng-hide m-l-sm" ng-show=""></i>
+	            <i class="fa fa-paperclip m-l-sm"></i>
 	          </div>
 	          <div class="clear">
 	            <div><a  class="text-md " href="#/app/mail/7">Lazy loading Angular controllers, directives and services</a><span class="label bg-light m-l-sm ">angular</span></div>
@@ -386,7 +377,7 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x b-l-warning">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a3.jpg" src="img/a3.jpg">
+	            <img src="img/a3.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
@@ -399,7 +390,7 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a4.jpg" src="img/a4.jpg">
+	            <img src="img/a4.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
@@ -412,7 +403,7 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x b-l-success">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a5.jpg" src="img/a5.jpg">
+	            <img src="img/a5.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>
@@ -425,7 +416,7 @@
 	        </li>
 	        <li class="list-group-item clearfix b-l-3x">
 	          <a class="avatar thumb pull-left m-r" href="#/app/page/profile">
-	            <img ng-src="img/a6.jpg" src="img/a6.jpg">
+	            <img src="img/a6.jpg">
 	          </a>
 	          <div class="pull-right text-sm text-muted">
 	            <span class="hidden-xs ">5 months ago</span>

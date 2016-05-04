@@ -53,7 +53,7 @@
         <!-- / buttons -->
 
        
-        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
           <div class="form-group">
             <div class="input-group">
               <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
@@ -189,9 +189,7 @@
           <nav ui-nav class="navi clearfix">
             <ul class="nav">
               <li class="line dk"></li>
-              <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                <span>Menu</span>
-              </li>
+              
 
             
                <li>
@@ -206,12 +204,7 @@
                   <span class="font-bold">Dashboard</span>
                 </a>
               </li>
-              <li>
-                <a href="ui_chart.html">
-                  <i class="glyphicon glyphicon-stats icon text-info-lter"></i>
-                  <span class="font-bold">Summary</span>
-                </a>
-              </li>
+             
               <li>
                 <a href="page_search.html">
                   <i class="glyphicon glyphicon-search icon text-info-lter"></i>
@@ -223,9 +216,7 @@
 
              
 
-              <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
-                <span>Your Stuff</span>
-              </li>  
+               
               <li>
                 <a href="page_profile.html">
                   <i class="icon-user icon text-success-lter"></i>
@@ -276,27 +267,11 @@
                 <span class="h3 text-black">Saurabh Deshpande</span>
                 <small class="m-l">San Jose, CA</small>
               </div>
-             <!--  <p class="m-b">
-                <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a>
-                <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a>
-                <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a>
-              </p> -->
-              <!-- <a href class="btn btn-sm btn-success btn-rounded">Follow</a> -->
+            
               
             </div>
           </div>
-          <!-- <div class="col-sm-5">
-            <div class="pull-right pull-none-xs text-center">
-              <a href class="m-b-md inline m">
-                <span class="h3 block font-bold">20</span>
-                <small>Followers</small>
-              </a>
-              <a href class="m-b-md inline m">
-                <span class="h3 block font-bold">250</span>
-                <small>Following</small>
-              </a>
-            </div>
-          </div> -->
+         
         </div>
       </div>
     </div>
@@ -459,18 +434,7 @@
           </li>
         </ul>
       </div>
-      <!-- <div class="panel b-light clearfix">
-        <div class="panel-body">
-          <a href class="thumb pull-left m-r">
-            <img src="img/a0.jpg" class="img-circle">
-          </a>
-          <div class="clear">
-            <a href class="text-info">@Mike Mcalidek <i class="fa fa-twitter"></i></a>
-            <small class="block text-muted">2,415 followers / 225 tweets</small>
-            <a href class="btn btn-xs btn-success m-t-xs">Follow</a>
-          </div>
-        </div>
-      </div> -->
+    
     </div>
   </div>
 </div>

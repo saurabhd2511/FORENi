@@ -31,8 +31,10 @@
 
 			    if (protocol != "") {
 			        url = common + "/" + plota + "/" + plotb + "?ip=" + protocol;
+					localStorage.setItem("url",url);
 			    } else {
 			        url = common + "/" + plota + "/" + plotb;
+					localStorage.setItem("url",url);
 			    }
 			    
 

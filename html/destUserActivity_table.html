@@ -17,8 +17,9 @@
 <body>
 	
 	<script type="application/javascript">
+		var url = localStorage.getItem('url');
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:8090/auth/destUserActivity", false);
+		xhr.open("GET", url, false);
 		xhr.send();
 		JSONdata = xhr.responseText;
 		src = JSON.parse(JSONdata);
@@ -61,10 +62,10 @@
 					</a>
 				</div>
 				<!-- search form -->
-				<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+				<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
+							<input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
 							<span class="input-group-btn">
 							<button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
 							</span>
@@ -195,9 +196,7 @@
 					<nav ui-nav class="navi clearfix">
 						<ul class="nav">
 							<li class="line dk"></li>
-							<li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-								<span>Menu</span>
-							</li>
+							
 							<li>
 								<a href="index.html">
 								<i class="glyphicon glyphicon-th icon text-info-lter"></i>
@@ -210,12 +209,7 @@
 								<span class="font-bold">Dashboard</span>
 								</a>
 							</li>
-							<li>
-								<a href="ui_chart.html">
-								<i class="glyphicon glyphicon-stats icon text-info-lter"></i>
-								<span class="font-bold">Summary</span>
-								</a>
-							</li>
+							
 							<li>
 								<a href="page_search.html">
 								<i class="glyphicon glyphicon-search icon text-info-lter"></i>
@@ -224,9 +218,7 @@
 							</li>
 							</a>
 							<li class="line dk"></li>
-							<li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
-								<span>Your Stuff</span>
-							</li>
+							
 							<li>
 								<a href="page_profile.html">
 									<i class="icon-user icon text-success-lter"></i>
