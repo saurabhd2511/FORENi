@@ -15,6 +15,7 @@
       <script src="http://code.highcharts.com/highcharts.js"></script>
       <script src="http://code.highcharts.com/modules/exporting.js"></script>
       <script src="js/plotGraph.js" type="application/javascript"></script>
+<!--	   <script type="application/javascript" src="js/tinytip.js"></script>-->
      
    </head>
    <body>
@@ -274,7 +275,7 @@
                         <label class="col-sm-1 control-label">Anomaly:</label>
                         <div class="col-sm-4">
                            <select id="dropdown1" name="account" class="form-control m-b">
-                              <option value="multipleDestination">Multiple Destinations</option>
+                              <option id="multipledestinations" value="multipleDestination">Multiple Destinations</option>
                               <option value="multipleSource">Multiple Source</option>
                               <option value="topDestPorts">Top Destination Ports</option>
                               <option value="topSourcePorts">Top Source Ports</option>
@@ -291,6 +292,7 @@
                      <br>
                      <div class="row"><center>
                         <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default">Enter</button>
+						 
 						 </center>
                      </div>
                   </div>

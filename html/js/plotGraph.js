@@ -60,8 +60,9 @@
 				xhr.open("GET", url, false);
 				xhr.send();
 				JSONdata = xhr.responseText;
+				alert(JSONdata);
 				var src = JSON.parse(JSONdata);
-
+				alert(src);
 
 				var key;
 				var doom = [];

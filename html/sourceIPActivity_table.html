@@ -9,16 +9,18 @@
   <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
-
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>      
   <link rel="stylesheet" href="css/font.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />
-
+  <script type="application/javascript" src="js/plot.js"></script>
 </head>
 <body>
 	
 	<script type="application/javascript">
+
+		
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:8090/auth/sourceIPActivity", false);
+		xhr.open("GET", "http://localhost:8090/auth/sourceIPActivity"+ipA, false);
 		xhr.send();
 		JSONdata = xhr.responseText;
 		console.log(JSONdata);
