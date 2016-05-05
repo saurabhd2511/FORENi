@@ -62,56 +62,9 @@
 					</a>
 				</div>
 				<!-- search form -->
-				<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
-					<div class="form-group">
-						<div class="input-group">
-							<input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
-							<span class="input-group-btn">
-							<button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</div>
-				</form>
-				<!-- / search form -->
-				<!-- nabar right -->
+
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-						<i class="icon-bell fa-fw"></i>
-						<span class="visible-xs-inline">Notifications</span>
-						<span class="badge badge-sm up bg-danger pull-right-xs">2</span>
-						</a>
-						<!-- dropdown -->
-						<div class="dropdown-menu w-xl animated fadeInUp">
-							<div class="panel bg-white">
-								<div class="panel-heading b-light bg-light">
-									<strong>You have <span>2</span> notifications</strong>
-								</div>
-								<div class="list-group">
-									<a href class="list-group-item">
-										<span class="pull-left m-r thumb-sm">
-											<!-- <img src="img/a0.jpg" alt="..." class="img-circle"> -->
-										</span>
-										<span class="clear block m-b-none">
-										IPS Detected<br>
-										<small class="text-muted">10 minutes ago</small>
-										</span>
-									</a>
-									<a href class="list-group-item">
-									<span class="clear block m-b-none">
-									OAuth attack breach<br>
-									<small class="text-muted">1 hour ago</small>
-									</span>
-									</a>
-								</div>
-								<div class="panel-footer text-sm">
-									<a href class="pull-right"><i class="fa fa-cog"></i></a>
-									<a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-								</div>
-							</div>
-						</div>
-						<!-- / dropdown -->
-					</li>
+
 					<li class="dropdown">
 						<a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
 						<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
@@ -213,10 +166,10 @@
 							<li>
 								<a href="page_search.html">
 								<i class="glyphicon glyphicon-search icon text-info-lter"></i>
-								<span class="font-bold">Analyse</span>
+								<span class="font-bold">Search</span>
 								</a>
 							</li>
-							</a>
+							
 							<li class="line dk"></li>
 							
 							<li>
@@ -254,8 +207,12 @@
 	    
 
 <div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Datatable</h1>
-</div>
+						<button onclick="back()" id="backDashboard" class="btn btn-info btn-lg">
+						<strong> 
+						Back to Dashboard
+						</strong>
+						</button>
+					</div>
 <div class="wrapper-md">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -306,7 +263,7 @@
   <!-- footer -->
   <footer id="footer" class="app-footer" role="footer">
     <div class="wrapper b-t bg-light">
-      <span class="pull-right">2.2.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+      <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
       &copy; 2016 Copyright.
     </div>
   </footer>
@@ -315,7 +272,13 @@
 
 
 </div>
-
+<script type="application/javascript">
+		function back(){
+			window.close();
+			window.location.href = dashboard.html";
+		}	
+		</script>	
+		
 <script src="../libs/jquery/jquery/dist/jquery.js"></script>
 <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
 <script src="js/ui-load.js"></script>

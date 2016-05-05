@@ -28,11 +28,25 @@
  		}
 	}
 	
-	var name=document.getElementById("name").value;
-	
+	var name = document.getElementById("name").value;
+	var email = document.getElementById("email").value;
+	var phone = document.getElementById("phone").value;
+	var organizationName = document.getElementById("organizationName").value;
+	var password = document.getElementById("password").value;
+	var securityQuestion = document.getElementById("securityQuestion").value;
+	var securityAnswer = document.getElementById("securityAnswer").value;
 		
-	var parameters="name="+namevalue+"&age="+agevalue;
+	var JSONparameters = {
+					"name":name,
+					"email":email,
+					"phone":phone,
+					"organizationName":organizationName,
+					"password":password,
+					"securityQuestion":securityQuestion,
+					"securityAnswer":securityAnswer
+	};
 	
+	var parameters = JSON.stringify(JSONparameters);
 	xhr.open("POST", /signup, true)
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 	xhr.send(parameters);
@@ -71,7 +85,7 @@
             </div>
             <br>
             <div class="list-group-item">
-              <input placeholder="Confirm Password" class="form-control no-border" required>
+              <input id="confirmPassword" type="password" placeholder="Confirm Password" class="form-control no-border" required>
             </div>
             <br>
             <div class="list-group-item">

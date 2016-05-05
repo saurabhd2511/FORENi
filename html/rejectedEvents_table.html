@@ -50,7 +50,7 @@
 			</div>
 			<!-- / navbar header -->
 			<!-- navbar collapse -->
-			<div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+			<div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
 				<!-- buttons -->
 				<div class="nav navbar-nav hidden-xs">
 					<a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
@@ -61,18 +61,7 @@
 					<i class="icon-user fa-fw"></i>
 					</a>
 				</div>
-				<!-- search form -->
-				<form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
-					<div class="form-group">
-						<div class="input-group">
-							<input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
-							<span class="input-group-btn">
-							<button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</div>
-				</form>
-				<!-- / search form -->
+				
 				<!-- nabar right -->
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
@@ -212,10 +201,10 @@
 							<li>
 								<a href="page_search.html">
 								<i class="glyphicon glyphicon-search icon text-info-lter"></i>
-								<span class="font-bold">Analyse</span>
+								<span class="font-bold">Search</span>
 								</a>
 							</li>
-							</a>
+							
 							<li class="line dk"></li>
 							
 							<li>
@@ -253,8 +242,12 @@
 	    
 
 <div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Datatable</h1>
-</div>
+						<button onclick="back()" id="backDashboard" class="btn btn-info btn-lg">
+						<strong> 
+						Back to Dashboard
+						</strong>
+						</button>
+					</div>
 <div class="wrapper-md">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -305,7 +298,7 @@
   <!-- footer -->
   <footer id="footer" class="app-footer" role="footer">
     <div class="wrapper b-t bg-light">
-      <span class="pull-right">2.2.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+      <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
       &copy; 2016 Copyright.
     </div>
   </footer>

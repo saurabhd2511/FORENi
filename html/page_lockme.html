@@ -15,9 +15,15 @@
 
 </head>
 <body>
+<script type="application/javascript">
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", url, false);
+		xhr.send();
+		JSONdata = xhr.responseText;
+		src = JSON.parse(JSONdata);
+		
+	</script>	
 <div class="app app-header-fixed ">
-  
-
 <div class="modal-over bg-black">
   <div class="modal-center animated fadeInUp text-center" style="width:200px;margin:-100px 0 0 -100px;">
     <div class="thumb-lg">

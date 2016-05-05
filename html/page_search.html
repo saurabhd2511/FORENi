@@ -39,7 +39,7 @@
       <!-- / navbar header -->
 
       <!-- navbar collapse -->
-      <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+      <div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
         <!-- buttons -->
         <div class="nav navbar-nav hidden-xs">
           <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
@@ -51,58 +51,10 @@
           </a>
         </div>
        
-        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
-          <div class="form-group">
-            <div class="input-group">
-              <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </div>
-        </form>
-        <!-- / search form -->
+
 
         <!-- nabar right -->
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-              <i class="icon-bell fa-fw"></i>
-              <span class="visible-xs-inline">Notifications</span>
-              <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
-            </a>
-            <!-- dropdown -->
-            <div class="dropdown-menu w-xl animated fadeInUp">
-              <div class="panel bg-white">
-                <div class="panel-heading b-light bg-light">
-                  <strong>You have <span>2</span> notifications</strong>
-                </div>
-                <div class="list-group">
-                  <a href class="list-group-item">
-                    <span class="pull-left m-r thumb-sm">
-                      <!-- <img src="img/a0.jpg" alt="..." class="img-circle"> -->
-                    </span>
-                    <span class="clear block m-b-none">
-                      IPS Detected<br>
-                      <small class="text-muted">10 minutes ago</small>
-                    </span>
-                  </a>
-                  <a href class="list-group-item">
-                    <span class="clear block m-b-none">
-                      OAuth attack breach<br>
-                      <small class="text-muted">1 hour ago</small>
-                    </span>
-                  </a>
-                </div>
-                <div class="panel-footer text-sm">
-                  <a href class="pull-right"><i class="fa fa-cog"></i></a>
-                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                </div>
-              </div>
-            </div>
-            <!-- / dropdown -->
-          </li>
-          <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right"><li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                 <img src="img/a0.jpg" alt="...">
@@ -211,7 +163,7 @@
               <li>
                 <a href="page_search.html">
                   <i class="glyphicon glyphicon-search icon text-info-lter"></i>
-                  <span class="font-bold">Analyse</span>
+                  <span class="font-bold">Search</span>
                 </a>
               </li>
               
@@ -266,13 +218,12 @@
       </span>
     </div>
   </form>
-  <p class="m-b-md"><strong>23</strong> Results found for: <strong>Keyword</strong></p>
+  <p class="m-b-md"><strong>var.length</strong> Results found for: <strong>var.name</strong></p>
   <div class="tab-container">
     <ul class="nav nav-tabs">
       <li class="active"><a href data-toggle="tab" data-target="#tab_1">All <span class="badge badge-sm m-l-xs">16</span></a></li>
-      <li><a href data-toggle="tab" data-target="#tab_2">Users <span class="badge bg-danger badge-sm m-l-xs">6</span></a></li>
-      <li><a href data-toggle="tab" data-target="#tab_3">Comments <span class="badge bg-primary badge-sm m-l-xs">9</span></a></li>
     </ul>
+	  <tabset>
     <div class="tab-content">
       <div class="tab-pane active" id="tab_1">
         <ul class="list-group no-borders pull-in m-b-none">
@@ -314,75 +265,7 @@
           </li>
         </ul>
       </div>
-      <div class="tab-pane" id="tab_2">
-        <ul class="list-group list-group-alt list-group-lg no-borders pull-in m-b-none">
-          <li class="list-group-item">
-            <a href="#" class="pull-left thumb-md m-r">
-              <img src="img/a0.jpg" alt="..." class="img-circle">
-            </a>
-            <div class="clear">
-              <a href="#" class="h4 text-primary m-b-sm block">Jone Dosh <span class="label label-sm bg-info">Editor</span></a>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="pull-left thumb-md m-r">
-              <img src="img/a1.jpg" alt="..." class="img-circle">
-            </a>
-            <div class="clear">
-              <a href="#" class="h4 text-primary m-b-sm block">Miya Soe <span class="label label-sm bg-danger">VIP</span></a>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="pull-left thumb-md m-r">
-              <img src="img/a2.jpg" alt="..." class="img-circle">
-            </a>
-            <div class="clear">
-              <a href="#" class="h4 text-primary m-b-sm block">Jocob</a>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="pull-left thumb-md m-r">
-              <img src="img/a3.jpg" alt="..." class="img-circle">
-            </a>
-            <div class="clear">
-              <a href="#" class="h4 text-primary m-b-sm block">Goal De</a>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero</div>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="pull-left thumb-md m-r">
-              <img src="img/a4.jpg" alt="..." class="img-circle">
-            </a>
-            <div class="clear">
-              <a href="#" class="h4 text-primary m-b-sm block">Miia Se</a>
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="tab-pane" id="tab_3">
-        <ul class="list-group list-group-lg no-borders pull-in m-b-none">
-          <li class="list-group-item">
-            <a href="#" class="h4 text-primary m-b-sm block">Mauris convallis mauris at pellentesque volutpat</a>
-            <p class="b wrapper-md pos-rlt bg-light r r-2x"><span class="arrow top pull-left arrow-light"></span>Lorem ipsum dolor sit amet, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="h4 text-primary m-b-sm block">Phasellus at ultricies neque, quis malesuada augu</a>
-            <p class="b wrapper-md pos-rlt"><span class="arrow top pull-left"></span>Fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="h4 text-primary m-b-sm block">Morbi nec nunc condimentum, egestas dui nec, fermentum diam</a>
-            <p class="b wrapper-md pos-rlt bg-info text-lt r r-2x"><span class="arrow top pull-left arrow-info"></span>Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-          </li>
-          <li class="list-group-item">
-            <a href="#" class="h4 text-primary m-b-sm block">Vestibulum ullamcorper sodales nisi nec condimentum Mauris convallis</a>
-            <p class="b wrapper-md pos-rlt"><span class="arrow top pull-left"></span>Egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-          </li>
-        </ul>
-      </div>
+    
     </div>
   </tabset>
 </div>
@@ -396,7 +279,7 @@
   <!-- footer -->
   <footer id="footer" class="app-footer" role="footer">
     <div class="wrapper b-t bg-light">
-      <span class="pull-right">2.2.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+      <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
       &copy;ForenI 2016.
     </div>
   </footer>

@@ -11,15 +11,19 @@
       <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
       <link rel="stylesheet" href="css/font.css" type="text/css" />
       <link rel="stylesheet" href="css/app.css" type="text/css" />
-      	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>      
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>      
       <script src="http://code.highcharts.com/highcharts.js"></script>
       <script src="http://code.highcharts.com/modules/exporting.js"></script>
       <script src="js/plotGraph.js" type="application/javascript"></script>
-<!--	   <script type="application/javascript" src="js/tinytip.js"></script>-->
-     
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
    </head>
-   <body>
-   
+   <body><script type="application/javascript">
+       jQuery( document ).ready(function( $ ) {
+   $('.uitip').tooltip();
+});
+	   
+	   </script>
       <div class="app app-header-fixed ">
       <!-- header -->
       <header id="header" class="app-header navbar" role="menu">
@@ -39,7 +43,7 @@
             </a>
             <!-- / brand -->
          </div>
-         <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+         <div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
             <!-- buttons -->
             <div class="nav navbar-nav hidden-xs">
                <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
@@ -50,57 +54,9 @@
                <i class="icon-user fa-fw"></i>
                </a>
             </div>
-            <!-- search form -->
-            <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
-               <div class="form-group">
-                  <div class="input-group">
-                     <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
-                     <span class="input-group-btn">
-                     <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
-                     </span>
-                  </div>
-               </div>
-            </form>
-            <!-- / search form -->
-            <!-- nabar right -->
+
             <ul class="nav navbar-nav navbar-right">
-               <li class="dropdown">
-                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                  <i class="icon-bell fa-fw"></i>
-                  <span class="visible-xs-inline">Notifications</span>
-                  <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
-                  </a>
-                  <!-- dropdown -->
-                  <div class="dropdown-menu w-xl animated fadeInUp">
-                     <div class="panel bg-white">
-                        <div class="panel-heading b-light bg-light">
-                           <strong>You have <span>2</span> notifications</strong>
-                        </div>
-                        <div class="list-group">
-                           <a href class="list-group-item">
-                              <span class="pull-left m-r thumb-sm">
-                                 <!-- <img src="img/a0.jpg" alt="..." class="img-circle"> -->
-                              </span>
-                              <span class="clear block m-b-none">
-                              IPS Detected<br>
-                              <small class="text-muted">10 minutes ago</small>
-                              </span>
-                           </a>
-                           <a href class="list-group-item">
-                           <span class="clear block m-b-none">
-                           OAuth attack breach<br>
-                           <small class="text-muted">1 hour ago</small>
-                           </span>
-                           </a>
-                        </div>
-                        <div class="panel-footer text-sm">
-                           <a href class="pull-right"><i class="fa fa-cog"></i></a>
-                           <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- / dropdown -->
-               </li>
+
                <li class="dropdown">
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
                   <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
@@ -183,23 +139,23 @@
                         <span>Menu</span>
                      </li>
 -->
-                     <li>
+                     <li id="listIndex_Home">
                         <a href="index.html">
                         <i class="glyphicon glyphicon-th icon text-info-lter"></i>
                         <span class="font-bold">Home</span>
                         </a>
                      </li>
-                     <li>
+                     <li id="listIndex_Dashboard">
                         <a href="dashboard.html">
                         <i class="glyphicon glyphicon-list-alt icon text-info-lter"></i>
                         <span class="font-bold">Dashboard</span>
                         </a>
                      </li>
                     
-                     <li>
+                     <li id="listIndex_Search">
                         <a href="page_search.html">
                         <i class="glyphicon glyphicon-search icon text-info-lter"></i>
-                        <span class="font-bold">Analyse</span>
+                        <span class="font-bold">Search</span>
                         </a>
                      </li>
                      </a>
@@ -209,20 +165,20 @@
                         <span>Your Stuff</span>
                      </li>
 -->
-                     <li>
+                     <li id="listIndex_Profile">
                         <a href="page_profile.html">
                            <i class="icon-user icon text-success-lter"></i>
                            <!-- <b class="badge bg-success pull-right">30%</b> -->
                            <span>Profile</span>
                         </a>
                      </li>
-                     <li>
+                     <li id="listIndex_Post">
                         <a href="page_post.html">
                         <i class="icon-question icon"></i>
                         <span>Post</span>
                         </a>
                      </li>
-                     <li>
+                     <li id="listIndex_Mail">
                         <a href="mail.html">
                         <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
                         <span>Mail</span>
@@ -243,10 +199,10 @@
                <h1 class="m-n font-thin h3"><strong>Dashboard</strong></h1>
             </div>
             <div class="panel panel-default">
-               <div id="logsmenu" class="panel-heading font-bold">                  
-                  Choose Types of Log
+               <div id="logsmenu" class="panel-heading font-bold">   <center>               
+                  Choose Types of Log</center>
                </div>
-               <div style="background-color:#FECE1A;" class="panel-body">
+               <div style="background-color:#ffffff;" class="panel-body">
                   <div class="wrapper-md">
                      <div class="row">
                         <div class="col-sm-3 col-sm-offset-3">
@@ -267,26 +223,28 @@
                <div class="panel-body">
                   <div class="wrapper-md">
                      <div class="row">
-                        <label class="col-sm-1 control-label">Anomaly:</label>
+                        <label class="col-sm-1 control-label"><strong>Anomaly:  </strong></label>
                         <div class="col-sm-4">
-                           <select id="dropdown1" name="account" class="form-control m-b">
-                              <option id="multipledestinations" value="multipleDestination">Multiple Destinations</option>
-                              <option value="multipleSource">Multiple Source</option>
-                              <option value="topDestPorts">Top Destination Ports</option>
-                              <option value="topSourcePorts">Top Source Ports</option>
-                              <option value="topDestinations">Top Destinations</option>
-                              <option value="acceptedEvents">Accepted Events</option>
-                              <option value="rejectedEvents">Rejected Events</option>
+							&nbsp;
+                           <select id="dropdown1" name="account" multiple class="form-control m-b uitip">
+                              <option title="Source targetting multiple destinations" id="multipledestinations" value="multipleDestination">Multiple Destinations</option>
+                              <option title="Destination targetted by multiple sources." value="multipleSource">Multiple Source</option>
+                              <option title="Top destination ports." value="topDestPorts">Top Destination Ports</option>
+                              <option title="Top source ports." value="topSourcePorts">Top Source Ports</option>
+                              <option title="Destinations taking more than 3 ports." value="topDestinations">Top Destinations</option>
+                              <option title="Total accepted traffic events." value="acceptedEvents">Accepted Events</option>
+                              <option title="Total rejected traffic events." value="rejectedEvents">Rejected Events</option>
                            </select>
                         </div>
-                        <label class="col-sm-1 col-sm-offset-1 control-label">IP Address:</label>
+                        <label class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:  </strong></label>
                         <div class="col-sm-4">
+							&nbsp;
                            <input type="text" id="ip" class="form-control">                        
                         </div>
                      </div>
                      <br>
                      <div class="row"><center>
-                        <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default">Enter</button>
+                        <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default"><strong>Enter</strong></button>
 						 
 						 </center>
                      </div>
@@ -303,26 +261,28 @@
                <div class="panel-body">
                   <div class="wrapper-md">
                      <div class="row">
-                        <label class="col-sm-1 control-label">Anomaly:</label>
+                        <label class="col-sm-1 control-label"><strong>Anomaly:  </strong></label>
                         <div class="col-sm-4">
-                           <select id="dropdown2" name="account" class="form-control m-b">
-                              <option value="failedLogin">Failed Login</option>
-                              <option value="remoteLogin">Remote Login</option>
-                              <option value="userActivity">User Activity</option>
-                              <option value="sourceIPActivity">Source IP Activity</option>
-                              <option value="destIPActivity">Destination IP Activity</option>
-                              <option value="destUserActivity">Destination User Activity</option>
-                              <option value="bruteForce">Brute Force</option>
+							&nbsp;
+                           <select id="dropdown2" name="account" multiple class="form-control m-b uitip">
+                              <option title="Failed login count statistics." value="failedLogin">Failed Login</option>
+                              <option title="Destination logins targetted by multiple sources." value="remoteLogin">Remote Login</option>
+                              <option title="All authentication activities for user account." value="userActivity">User Activity</option>
+                              <option title="All authentication acitivities by source IP." value="sourceIPActivity">Source IP Activity</option>
+                              <option title="All authentication activities by destination IP." value="destIPActivity">Destination IP Activity</option>
+                              <option title="All authentication acitivities by destination hostname." value="destUserActivity">Destination User Activity</option>
+                              <option title="Attempted brute force attacks." value="bruteForce">Brute Force</option>
                            </select>
                         </div>
-                        <label class="col-sm-1 col-sm-offset-1 control-label">UserName</label>
+                        <label class="col-sm-1 col-sm-offset-1 control-label"><strong>UserName:  </strong></label>
                         <div class="col-sm-4">
+							&nbsp;
                            <input type="text" id="ip" class="form-control">                        
                         </div>
                      </div>
                      <br>
                      <div class="row">
-                        <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default">Enter</button>
+                        <button onclick="myFunction()" class="col-sm-3 col-sm-offset-4 btn btn-default"><strong>Enter</strong></button>
                      </div>
                   </div>
                   <br>
@@ -335,11 +295,13 @@
                <div class="row">
                   <div id="are"  class="col-sm-4 col-offset-sm-10" style="width: 800px">
                   </div>
+<!--
                   <div class="row">
                      <button onclick="BlockIP()" class="col-sm-3 col-sm-offset-4 btn btn-danger">Block IP</button>
                      &nbsp;
                      <input type="text" id="block_ip" class="col-sm-3">
                   </div>
+-->
                   <div class="row">
                      <br>	
                   </div>
@@ -350,7 +312,7 @@
       <!-- /content -->
       <footer id="footer" class="app-footer" role="footer">
          <div class="wrapper b-t bg-light">
-            <span class="pull-right">2.2.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+            <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
             &copy;ForenI 2016.
          </div>
       </footer>
