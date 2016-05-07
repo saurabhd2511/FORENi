@@ -1,488 +1,276 @@
 <!DOCTYPE html>
 <html lang="en" class="">
-<head>
-  <meta charset="utf-8" />
-  <title>ForenI | Blog</title>
-  <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
-
-  <link rel="stylesheet" href="css/font.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />
-
-</head>
-<body>
-<div class="app app-header-fixed ">
-  
-
-    <!-- header -->
-  <header id="header" class="app-header navbar" role="menu">
-      <!-- navbar header -->
-      <div class="navbar-header bg-dark">
-        <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
-          <i class="glyphicon glyphicon-cog"></i>
-        </button>
-        <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
-          <i class="glyphicon glyphicon-align-justify"></i>
-        </button>
-        <!-- brand -->
-        <a href="#/" class="navbar-brand text-lt">
-          <i class="fa fa-btc"></i>
-          <img src="img/logo.png" alt="." class="hide">
-          <span class="hidden-folded m-l-xs">ForenI</span>
-        </a>
-        <!-- / brand -->
-      </div>
-      <!-- / navbar header -->
-
-      <!-- navbar collapse -->
-      <div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
-        <!-- buttons -->
-        <div class="nav navbar-nav hidden-xs">
-          <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
-            <i class="fa fa-dedent fa-fw text"></i>
-            <i class="fa fa-indent fa-fw text-active"></i>
-          </a>
-          <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
-            <i class="icon-user fa-fw"></i>
-          </a>
-        </div>
-      
-
-        <!-- search form -->
-        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
-          <div class="form-group">
-            <div class="input-group">
-              <input type="text" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Find Logs...">
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
-              </span>
+   <head>
+      <meta charset="utf-8" />
+      <title>ForenI | Blog</title>
+      <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
+      <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+      <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+      <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
+      <link rel="shortcut icon" href="img/favicon.icoa" type="image/x-icon">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="css/font.css" type="text/css" />
+      <link rel="stylesheet" href="css/app.css" type="text/css" />
+   </head>
+   <body>
+      <div class="app app-header-fixed ">
+         <!-- header -->
+         <header id="header" class="app-header navbar" role="menu">
+            <!-- navbar header -->
+            <div class="navbar-header bg-dark">
+               <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
+               <i class="glyphicon glyphicon-cog"></i>
+               </button>
+               <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
+               <i class="glyphicon glyphicon-align-justify"></i>
+               </button>
+               <!-- brand -->
+               <a href="index.html" class="navbar-brand text-lt">
+               <img src="img/logo2.png" alt=".">
+               <span class="hidden-folded m-l-xs">ForenI</span>
+               </a>
+               <!-- / brand -->
             </div>
-          </div>
-        </form>
-        <!-- / search form -->
-
-        <!-- nabar right -->
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-              <i class="icon-bell fa-fw"></i>
-              <span class="visible-xs-inline">Notifications</span>
-              <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
-            </a>
-            <!-- dropdown -->
-            <div class="dropdown-menu w-xl animated fadeInUp">
-              <div class="panel bg-white">
-                <div class="panel-heading b-light bg-light">
-                  <strong>You have <span>2</span> notifications</strong>
-                </div>
-                <div class="list-group">
-                  <a href class="list-group-item">
-                    <span class="pull-left m-r thumb-sm">
-                      <!-- <img src="img/a0.jpg" alt="..." class="img-circle"> -->
-                    </span>
-                    <span class="clear block m-b-none">
-                      IPS Detected<br>
-                      <small class="text-muted">10 minutes ago</small>
-                    </span>
+            <!-- / navbar header -->
+            <!-- navbar collapse -->
+            <div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+               <!-- buttons -->
+               <div class="nav navbar-nav hidden-xs">
+                  <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+                  <i class="fa fa-dedent fa-fw text"></i>
+                  <i class="fa fa-indent fa-fw text-active"></i>
                   </a>
-                  <a href class="list-group-item">
-                    <span class="clear block m-b-none">
-                      OAuth attack breach<br>
-                      <small class="text-muted">1 hour ago</small>
-                    </span>
+                  <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
+                  <i class="icon-user fa-fw"></i>
                   </a>
-                </div>
-                <div class="panel-footer text-sm">
-                  <a href class="pull-right"><i class="fa fa-cog"></i></a>
-                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                </div>
-              </div>
+               </div>
+               <!-- nabar right -->
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                     <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+                     <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                     <img src="img/a0.jpg" alt="...">
+                     <i class="on md b-white bottom"></i>
+                     </span>
+                     <span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
+                     </a>
+                     <!-- dropdown -->
+                     <ul class="dropdown-menu animated fadeInRight w">
+                        <li>
+                           <a href="page_profile.html">Profile</a>
+                        </li>
+                        <li>
+                           <a href="page_post.html">Post</a>
+                        </li>
+                        <li>
+                           <a href="mail.html">Messenger</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                           <a href="home.html">Logout</a>
+                        </li>
+                     </ul>
+                     <!-- / dropdown -->
+                  </li>
+               </ul>
+               <!-- / navbar right -->
             </div>
-            <!-- / dropdown -->
-          </li>
-          <li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="img/a0.jpg" alt="...">
-                <i class="on md b-white bottom"></i>
-              </span>
-              <span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
-            </a>
-            <!-- dropdown -->
-            <ul class="dropdown-menu animated fadeInRight w">
-             
-              <li>
-                  <a href="page_profile.html">Profile</a>
-                </li>
-                <li>
-                  <a href="page_post.html">Post</a>
-                </li>
-                <li>
-                  <a href="mail.html">Messenger</a>
-                </li>
-                
-                <li class="divider"></li>
-                <li>
-                  <a href="home.html">Logout</a>
-                </li>
-            </ul>
-            <!-- / dropdown -->
-          </li>
-        </ul>
-        <!-- / navbar right -->
+            <!-- / navbar collapse -->
+         </header>
+         <!-- / header -->
+         <!-- aside -->
+         <aside id="aside" class="app-aside hidden-xs bg-dark">
+            <div class="aside-wrap">
+               <div class="navi-wrap">
+                  <!-- user -->
+                  <div class="clearfix hidden-xs text-center hide" id="aside-user">
+                     <div class="dropdown wrapper">
+                        <a href="app.page.profile">
+                        <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                        <img src="img/a0.jpg" class="img-full" alt="...">
+                        </span>
+                        </a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
+                        <span class="clear">
+                        <span class="block m-t-sm">
+                        <strong class="font-bold text-lt">Saurabh Deshpande</strong> 
+                        <b class="caret"></b>
+                        </span>
+                        <span class="text-muted text-xs block">Security Analyst</span>
+                        </span>
+                        </a>
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu animated fadeInRight w hidden-folded">
+                           <li>
+                              <a href="page_profile.html">Profile</a>
+                           </li>
+                           <li>
+                              <a href="page_post.html">Post</a>
+                           </li>
+                           <li>
+                              <a href="mail.html">Messenger</a>
+                           </li>
+                           <li class="divider"></li>
+                           <li>
+                              <a href="home.html">Logout</a>
+                           </li>
+                        </ul>
+                        <!-- / dropdown -->
+                     </div>
+                  </div>
+                  <!-- / user -->
+                  <!-- nav -->
+                  <nav ui-nav class="navi clearfix">
+                     <ul class="nav">
+                        <li class="line dk"></li>
+                        <li>
+                           <a href="index.html">
+                           <i class="glyphicon glyphicon-th icon text-info-lter"></i>
+                           <span class="font-bold">Home</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="dashboard.html">
+                           <i class="glyphicon glyphicon-list-alt icon text-info-lter"></i>
+                           <span class="font-bold">Dashboard</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="page_search.html">
+                           <i class="glyphicon glyphicon-search icon text-info-lter"></i>
+                           <span class="font-bold">Search</span>
+                           </a>
+                        </li>
+                        <li class="line dk"></li>
+                        <li>
+                           <a href="page_profile.html">
+                              <i class="icon-user icon text-success-lter"></i>
+                              <!-- <b class="badge bg-success pull-right">30%</b> -->
+                              <span>Profile</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="page_post.html">
+                           <i class="icon-question icon"></i>
+                           <span>Post</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="mail.html">
+                           <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+                           <span>Messenger</span>
+                           </a>
+                        </li>
+                     </ul>
+                     <li class="line dk"></li>
+                  </nav>
+               </div>
+            </div>
+         </aside>
+         <!-- / aside -->
+         <!-- content -->
+         <div id="content" class="app-content" role="main">
+            <div class="app-content-body ">
+               <div class="bg-light lter b-b wrapper-md">
+                  <h1 class="m-n font-thin h3">Post</h1>
+               </div>
+               <div class="wrapper-md">
+                  <div class="row">
+                     <div class="col-sm-9">
+                        <div class="blog-post">
+                           <!-- Deletion started here -->
+                           <div class="panel">
+                              <div>
+                                 <img src="img/c0.jpg" class="img-full">
+                              </div>
+                              <div class="wrapper-lg">
+                                 <h2 class="m-t-none"><a href="http://malwareforensics1.blogspot.com/">Malware Forensics : Investigation and Mitigation of Windows/Linux/Mac Malwares</a></h2>
+                                 <div>
+                                    <p>Dll Injection Attack
+                                       DLL injection is a technique used for running code within the address space of another process by forcing it to load a dynamic-link library. DLL injection is often used by external programs to influence the behavior of another program in a way its authors did not anticipate or intend. For example, the injected code could hook system function calls, or read the contents of password textboxes, which cannot be done the usual way. A program used to inject arbitrary code into arbitrary processes is called a DLL injector.</p>
+                                       <p>The code injection is usually in the form of a dynamic link library (DLL), since DLLs are meant to be loaded as needed at run time.
+                                      	However, other methods of code injection could be in the form of an attaching an executables, handwriting the code or reversing the application to call DLLs.
+                                       Code injection requires sufficient privileges to play with other system’s program memory.
+                                       The Windows API offers number of functions that allows to attach and manipulate into other programs for debugging purposes. 
+                                       However, this API can be exploited with malicious intend too. Dll injection can be broken down into 4 steps:</p>
+                                       <ol>
+									 	<li>Attach to the process</li>
+                                        <li>Allocate Memory within the process</li>
+                                        <li>Copy the DLL or the DLL Path into the processes memory and determine appropriate memory addresses</li>
+                                        <li>Instruct the process to execute the DLL</li>
+                                       </ol>
+										<p>Common windows API, that can be used are as follows:
+                                       openProcess() 
+                                       virtualAllocEx()
+                                       writeProcessMemory()
+                                       loadLibraryA()
+                                       createRemoteThread()
+                                       ntCreateThreatEx()
+                                       createFileA()
+                                       getFileSize()
+                                       getModuleHandle()
+                                       getProcAddress()
+                                       loadRemoteLibraryR()
+                                       createRemoteThreat()
+                                       getReflectiveLoaderOffset()
+                                    </p>
+                                 </div>
+                                 <div class="line line-lg b-b b-light"></div>
+                                 <div class="text-muted">
+                                    <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">Rhydham Joshi</a>
+                                    <i class="fa fa-clock-o text-muted"></i> Dec 3, 2015
+                                    <a href class="m-l-sm"><i class="fa fa-comment-o text-muted"></i> No comments</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <h4 class="m-t-lg m-b">Leave a comment</h4>
+                        <form>
+                           <div class="form-group pull-in clearfix">
+                              <div class="col-sm-6">
+                                 <label>Your name</label>
+                                 <input type="text" class="form-control" placeholder="Name">
+                              </div>
+                              <div class="col-sm-6">
+                                 <label >Email</label>
+                                 <input type="email" class="form-control" placeholder="Enter email">
+                              </div>
+                           </div>
+                           <div class="form-group">
+                              <label>Comment</label>
+                              <textarea class="form-control" rows="5" placeholder="Type your comment"></textarea>
+                           </div>
+                           <div class="form-group">
+                              <button type="submit" class="btn btn-success">Submit comment</button>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="col-sm-3">
+                        <h5 class="font-bold">Recent Posts</h5>
+                        <div>
+                           None
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer id="footer" class="app-footer" role="footer">
+            <div class="wrapper b-t bg-light">
+               <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+               &copy;ForenI 2016.
+            </div>
+         </footer>
       </div>
-      <!-- / navbar collapse -->
-  </header>
-  <!-- / header -->
-
-
-    <!-- aside -->
-   <aside id="aside" class="app-aside hidden-xs bg-dark">
-      <div class="aside-wrap">
-        <div class="navi-wrap">
-          <!-- user -->
-          <div class="clearfix hidden-xs text-center hide" id="aside-user">
-            <div class="dropdown wrapper">
-              <a href="app.page.profile">
-                <span class="thumb-lg w-auto-folded avatar m-t-sm">
-                  <img src="img/a0.jpg" class="img-full" alt="...">
-                </span>
-              </a>
-              <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
-                <span class="clear">
-                  <span class="block m-t-sm">
-                    <strong class="font-bold text-lt">Saurabh Deshpande</strong> 
-                    <b class="caret"></b>
-                  </span>
-                  <span class="text-muted text-xs block">Security Analyst</span>
-                </span>
-              </a>
-              <!-- dropdown -->
-              <ul class="dropdown-menu animated fadeInRight w hidden-folded">
-               
-                <li>
-                  <a href="page_profile.html">Profile</a>
-                </li>
-                <li>
-                  <a href="page_post.html">Post</a>
-                </li>
-                <li>
-                  <a href="mail.html">Mail</a>
-                </li>
-               
-                <li class="divider"></li>
-                <li>
-                  <a href="home.html">Logout</a>
-                </li>
-              </ul>
-              <!-- / dropdown -->
-            </div>
-          </div>
-          <!-- / user -->
-
-          <!-- nav -->
-          <nav ui-nav class="navi clearfix">
-            <ul class="nav">
-              <li class="line dk"></li>
-              
-
-           
-               <li>
-                <a href="index.html">
-                  <i class="glyphicon glyphicon-th icon text-info-lter"></i>
-                  <span class="font-bold">Home</span>
-                </a>
-              </li>
-              <li>
-                <a href="dashboard.html">
-                  <i class="glyphicon glyphicon-list-alt icon text-info-lter"></i>
-                  <span class="font-bold">Dashboard</span>
-                </a>
-              </li>
-             
-              <li>
-                <a href="page_search.html">
-                  <i class="glyphicon glyphicon-search icon text-info-lter"></i>
-                  <span class="font-bold">Search</span>
-                </a>
-              </li>
-             
-              <li class="line dk"></li>
-
-            
-
-              
-              <li>
-                <a href="page_profile.html">
-                  <i class="icon-user icon text-success-lter"></i>
-                  <!-- <b class="badge bg-success pull-right">30%</b> -->
-                  <span>Profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="page_post.html">
-                  <i class="icon-question icon"></i>
-                  <span>Post</span>
-                </a>
-              </li>
-              <li>
-                <a href="mail.html">
-                  <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-                  <span>Mail</span>
-                </a>
-              </li>
-            </ul>
-            <li class="line dk"></li>
-          </nav>
-    
-        </div>
-      </div>
-  </aside>
-  <!-- / aside -->
-
-
-  <!-- content -->
-  <div id="content" class="app-content" role="main">
-  	<div class="app-content-body ">
-	    
-
-<div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Post</h1>
-</div>
-<div class="wrapper-md">
-  <div class="row">
-    <div class="col-sm-9">
-      <div class="blog-post">                   
-<!--
-        <div class="panel">
-          <div>
-            <img src="img/c0.jpg" class="img-full">
-          </div>
-          <div class="wrapper-lg">
-            <h2 class="m-t-none"><a href>7 things you need to know about the flat design</a></h2>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
-              <br><br>
-              Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
-            </div>
-            <div class="line line-lg b-b b-light"></div>
-            <div class="text-muted">
-              <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">Admin</a>
-              <i class="fa fa-clock-o text-muted"></i> Feb 20, 2013
-              <a href class="m-l-sm"><i class="fa fa-comment-o text-muted"></i> 2 comments</a>
-            </div>
-          </div>
-        </div>
--->
-        <div class="panel">
-          <div class="wrapper-lg">
-<!--            <h2 class="m-t-none"><a href>Bootstrap 3: What you need to know</a></h2>-->
-            <div>
-<!--
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
-              </p>
-              <h3>Html5 and CSS3</h3>
-              <p>
-              Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
--->
-            </div>
-            <div class="line line-lg b-b b-light"></div>
-            <div class="text-muted">
-              <i class="fa fa-user text-muted"></i> by <a href class="m-r-sm">Admin</a>
-              <i class="fa fa-clock-o text-muted"></i> Feb 15, 2013
-              <a href class="m-l-sm"><i class="fa fa-comment-o text-muted"></i> 4 comments</a>
-            </div>
-          </div>
-        </div>
-      </div>
-<!--
-      <div class="text-center m-t-lg m-b-lg">
-        <ul class="pagination pagination-md">
-          <li><a href><i class="fa fa-chevron-left"></i></a></li>
-          <li class="active"><a href>1</a></li>
-          <li><a href>2</a></li>
-          <li><a href>3</a></li>
-          <li><a href>4</a></li>
-          <li><a href>5</a></li>
-          <li><a href><i class="fa fa-chevron-right"></i></a></li>
-        </ul>
-      </div>
--->
-<!--
-      <h4 class="m-t-lg m-b">3 Comments</h4>
-      <div>
-        <div>
-          <a class="pull-left thumb-sm">
-            <img src="img/a0.jpg" class="img-circle">
-          </a>
-          <div class="m-l-xxl m-b">
-            <div>
-              <a href><strong>John smith</strong></a>
-              <label class="label bg-info m-l-xs">Editor</label> 
-              <span class="text-muted text-xs block m-t-xs">
-                24 minutes ago
-              </span>
-            </div>
-            <div class="m-t-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum.</div>
-          </div>
-        </div>
-
-        <div class="m-l-xxl">
-          <a class="pull-left thumb-sm">
-            <img src="img/a1.jpg" class="img-circle">
-          </a>
-          <div class="m-l-xxl m-b">
-            <div>
-              <a href><strong>John smith</strong></a>
-              <label class="label bg-dark m-l-xs">Admin</label> 
-              <span class="text-muted text-xs block m-t-xs">
-                26 minutes ago
-              </span>
-            </div>
-            <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-          </div>
-        </div>
-
-        <div>
-          <a class="pull-left thumb-sm">
-            <img src="img/a2.jpg" class="img-circle">
-          </a>
-          <div class="m-l-xxl m-b">
-            <div>
-              <a href><strong>John smith</strong></a>
-              <label class="label bg-dark m-l-xs">Admin</label> 
-              <span class="text-muted text-xs block m-t-xs">
-                26 minutes ago
-              </span>
-            </div>
-            <blockquote class="m-t">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-            </blockquote>
-            <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-          </div>
-        </div>
-
-      </div>
--->
-      <h4 class="m-t-lg m-b">Leave a comment</h4>
-      <form>
-        <div class="form-group pull-in clearfix">
-          <div class="col-sm-6">
-            <label>Your name</label>
-            <input type="text" class="form-control" placeholder="Name">
-          </div>
-          <div class="col-sm-6">
-            <label >Email</label>
-            <input type="email" class="form-control" placeholder="Enter email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Comment</label>
-          <textarea class="form-control" rows="5" placeholder="Type your comment"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-success">Submit comment</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-sm-3">
-      <h5 class="font-bold">Categories</h5>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">15</span>
-            Photograph
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">30</span>
-            Life style
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">9</span>
-            Food
-          </a>
-        </li>
-        <li class="list-group-item">
-          <a href>
-            <span class="badge pull-right">4</span>
-            Travel world
-          </a>
-        </li>
-      </ul>
-      <div class="tags m-b-lg l-h-2x">
-        <a href class="label bg-primary">Bootstrap</a> <a href class="label bg-primary">Application</a> <a href class="label bg-primary">Apple</a> <a href class="label bg-primary">Less</a> <a href class="label bg-primary">Theme</a> <a href class="label bg-primary">Wordpress</a>
-      </div>
-      <h5 class="font-bold">Recent Posts</h5>
-      <div>
-        <div>
-          <a class="pull-left thumb thumb-wrapper m-r">
-            <img src="img/b0.jpg">
-          </a>
-          <div class="clear">                        
-            <a href class="font-semibold text-ellipsis">Bootstrap 3: What you need to know</a>
-            <div class="text-xs block m-t-xs"><a href>Travel</a> 2 minutes ago</div>
-          </div>
-        </div>
-        <div class="line"></div>
-        <div>
-          <a class="pull-left thumb thumb-wrapper m-r">
-            <img src="img/b1.jpg">
-          </a>
-          <div class="clear">                        
-            <a href class="font-semibold text-ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-            <div class="text-xs block m-t-xs"><a href>Design</a> 2 hours ago</div>
-          </div>
-        </div>
-        <div class="line"></div>
-        <div>
-          <a class="pull-left thumb thumb-wrapper m-r">
-            <img src="img/b2.jpg">
-          </a>
-          <div class="clear">                        
-            <a href class="font-semibold text-ellipsis">Sed diam nonummy nibh euismod tincidunt ut laoreet</a>
-            <div class="text-xs block m-t-xs"><a href>MFC</a> 1 week ago</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-	</div>
-  </div>
-  <!-- /content -->
-  
-  <!-- footer -->
-  <footer id="footer" class="app-footer" role="footer">
-    <div class="wrapper b-t bg-light">
-      <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-      &copy;ForenI 2016.
-    </div>
-  </footer>
-  <!-- / footer -->
-
-
-
-</div>
-
-<script src="../libs/jquery/jquery/dist/jquery.js"></script>
-<script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
-<script src="js/ui-load.js"></script>
-<script src="js/ui-jp.config.js"></script>
-<script src="js/ui-jp.js"></script>
-<script src="js/ui-nav.js"></script>
-<script src="js/ui-toggle.js"></script>
-<script src="js/ui-client.js"></script>
-
-</body>
+      <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+      <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="js/ui-load.js"></script>
+      <script src="js/ui-jp.config.js"></script>
+      <script src="js/ui-jp.js"></script>
+      <script src="js/ui-nav.js"></script>
+      <script src="js/ui-toggle.js"></script>
+      <script src="js/ui-client.js"></script>
+   </body>
 </html>

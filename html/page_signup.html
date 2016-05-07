@@ -11,43 +11,69 @@
       <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
       <link rel="stylesheet" href="css/font.css" type="text/css" />
       <link rel="stylesheet" href="css/app.css" type="text/css" />
+      <link rel="shortcut icon" href="img/favicon.icoa" type="image/x-icon">
+      <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+      <style type="text/css">
+         img.bg {
+         min-height: 100%;
+         min-width: 1024px;
+         width: 100%;
+         height: auto;
+         position: fixed;
+         top: 0;
+         left: 0;
+         }
+         @media screen and (max-width: 1024px) { 
+         img.bg {
+         left: 50%;
+         margin-left: -512px;  
+         }
+         }	
+      </style>
    </head>
    <body>
       <script type="application/javascript">
-    function signUp(){
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phoneNumber = document.getElementById("phone").value;
-    var organizationName = document.getElementById("organizationName").value;
-    var password = document.getElementById("password").value;
-    var question = document.getElementById("securityQuestion").value;
-    var answer = document.getElementById("securityAnswer").value;
-         	
-	var jsonData = {name:name,email:email,phoneNumber:phoneNumber,organizationName:organizationName,password:password,question:question,answer:answer};
-	alert(jsonData);
-	alert(typeof(jsonData));
-    var src = JSON.stringify(jsonData);
-	alert(src);
-	alert(typeof(src));
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "http://localhost:8090/signup");
-    xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");	
-  	xmlhttp.send(JSON.stringify({name:name,email:email,phoneNumber:phoneNumber,organizationName:organizationName,password:password,question:question,answer:answer}));
+         function signUp(){
+         var name = document.getElementById("name").value;
+         var email = document.getElementById("email").value;
+         var phoneNumber = document.getElementById("phone").value;
+         var organizationName = document.getElementById("organizationName").value;
+         var password = document.getElementById("password").value;
+         var question = document.getElementById("securityQuestion").value;
+         var answer = document.getElementById("securityAnswer").value;
+         var data =JSON.stringify({name:"name",email:"email",phoneNumber:"phoneNumber",organizationName:"organizationName",password:"password",question:"question",answer:"answer"});
+         var xmlhttp = new XMLHttpRequest();
+         xmlhttp.open("POST", "http://localhost:8090/signup");
+         xmlhttp.setRequestHeader("Content-Type", "application/json");
+           xmlhttp.setRequestHeader("Access-Control-Allow-Originss", "*");
+         xmlhttp.onreadystatechange = function () { 
+         	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+         alert(xmlhttp.responseText);
+           	var json = JSON.parse(xmlhttp.responseText);
+         console.log(json.email + ", " + json.password)
+         	}
          }
+         alert(data).send(data);
+         
+         return false;
+         
+         }
+           
       </script>
+      <img src="images/reg.jpg" class="bg">
       <div class="app app-header-fixed ">
-         <div class="container w-xxl w-auto-xs">
+         <div id="registraionModal" class="container w-xxl w-auto-xs">
             <a href class="navbar-brand block m-t">ForenI</a>
             <div class="m-b-lg">
                <div class="wrapper text-center">
                   <strong>Quick Sign up</strong>
                </div>
-               <form name="form" class="form-validation" method="post">
+               <form name="form" class="form-validation" method="post" onsubmit="return signUp()">
                   <div class="text-danger wrapper text-center">
                   </div>
                   <div class="list-group list-group-sm">
                      <div class="list-group-item">
-                        <input id="name" placeholder="Name" class="form-control no-border" required>
+                        <input id="name" placeholder="Name" class="form-control no-border" required style="">
                      </div>
                      <br>
                      <div class="list-group-item">
@@ -83,10 +109,9 @@
                      <input type="checkbox" required><i></i> Agree the <a href>terms and policy</a>
                      </label>
                   </div>
-                  <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="signUp()">Sign up</button>
+                  <input type="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
                   <div class="line line-dashed"></div>
                   <p class="text-center"><small>Already have an account?</small></p>
-                  <!-- <a ui-sref="access.signin" class="btn btn-lg btn-default btn-block">Sign in</a> -->
                   <a href="page_signin.html" class="btn btn-lg btn-default btn-block">Sign in</a>
                </form>
             </div>
@@ -96,7 +121,7 @@
                </p>
             </div>
          </div>
-      </div>
+      
       <script src="../libs/jquery/jquery/dist/jquery.js"></script>
       <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
       <script src="js/ui-load.js"></script>

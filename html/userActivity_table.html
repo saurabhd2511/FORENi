@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
-
+<link rel="shortcut icon" href="img/favicon.icoa" type="image/x-icon">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+																	
   <link rel="stylesheet" href="css/font.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />
 
 </head>
 <body>
-	
 	<script type="application/javascript">
 		var url = localStorage.getItem('url');
 		var xhr = new XMLHttpRequest();
@@ -29,9 +30,6 @@
 		}
 	</script>
 	<div class="app app-header-fixed ">
-  
-
- 	<!-- header -->
 		<header id="header" class="app-header navbar" role="menu">
 			<!-- navbar header -->
 			<div class="navbar-header bg-dark">
@@ -44,13 +42,10 @@
 				<!-- brand -->
 				<a href="#/" class="navbar-brand text-lt">
 				<i class="fa fa-btc"></i>
-				<img src="img/logo.png" alt="." class="hide">
+				<img src="img/logo2.png" alt="." class="hide">
 				<span class="hidden-folded m-l-xs">ForenI</span>
 				</a>
-				<!-- / brand -->
 			</div>
-			<!-- / navbar header -->
-			<!-- navbar collapse -->
 			<div id="top_header" class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
 				<!-- buttons -->
 				<div class="nav navbar-nav hidden-xs">
@@ -62,8 +57,6 @@
 					<i class="icon-user fa-fw"></i>
 					</a>
 				</div>
-				
-				<!-- nabar right -->
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
@@ -73,7 +66,6 @@
 						</span>
 						<span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
 						</a>
-						<!-- dropdown -->
 						<ul class="dropdown-menu animated fadeInRight w">
 							<li>
 								<a href="page_profile.html">Profile</a>
@@ -84,31 +76,18 @@
 							<li>
 								<a href="mail.html">Mail</a>
 							</li>
-							<!-- <li>
-								<a href>
-								  <span class="badge bg-danger pull-right">3</span>
-								  Notifications
-								</a>
-								</li> -->
 							<li class="divider"></li>
 							<li>
 								<a href="home.html">Logout</a>
 							</li>
 						</ul>
-						<!-- / dropdown -->
 					</li>
 				</ul>
-				<!-- / navbar right -->
 			</div>
-			<!-- / navbar collapse -->
 		</header>
-		<!-- / header -->
-	
-	<!-- aside -->
 		<aside id="aside" class="app-aside hidden-xs bg-dark">
 			<div class="aside-wrap">
 				<div class="navi-wrap">
-					<!-- user -->
 					<div class="clearfix hidden-xs text-center hide" id="aside-user">
 						<div class="dropdown wrapper">
 							<a href="app.page.profile">
@@ -125,7 +104,6 @@
 							<span class="text-muted text-xs block">Security Analyst</span>
 							</span>
 							</a>
-							<!-- dropdown -->
 							<ul class="dropdown-menu animated fadeInRight w hidden-folded">
 								<li>
 									<a href="page_profile.html">Profile</a>
@@ -141,11 +119,8 @@
 									<a href="home.html">Logout</a>
 								</li>
 							</ul>
-							<!-- / dropdown -->
 						</div>
 					</div>
-					<!-- / user -->
-					<!-- nav -->
 					<nav ui-nav class="navi clearfix">
 						<ul class="nav">
 							<li class="line dk"></li>
@@ -193,18 +168,11 @@
 						</ul>
 						<li class="line dk"></li>
 					</nav>
-					<!-- nav -->
 				</div>
 			</div>
 		</aside>
-		<!-- / aside -->
-	
-
-  <!-- content -->
   <div id="content" class="app-content" role="main">
   	<div class="app-content-body ">
-	    
-
 <div class="bg-light lter b-b wrapper-md">
 						<button onclick="back()" id="backDashboard" class="btn btn-info btn-lg">
 						<strong> 
@@ -252,26 +220,21 @@
     </div>
   </div>
 </div>
-
-
-
 	</div>
   </div>
-  <!-- /content -->
-  
-  <!-- footer -->
   <footer id="footer" class="app-footer" role="footer">
     <div class="wrapper b-t bg-light">
       <span class="pull-right"><a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
       &copy; 2016 Copyright.
     </div>
   </footer>
-  <!-- / footer -->
-
-
-
 </div>
-
+<script type="application/javascript">
+		function back(){
+			window.close();
+			window.location.href = dashboard.html";
+		}	
+		</script>	
 <script src="../libs/jquery/jquery/dist/jquery.js"></script>
 <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
 <script src="js/ui-load.js"></script>
@@ -280,6 +243,5 @@
 <script src="js/ui-nav.js"></script>
 <script src="js/ui-toggle.js"></script>
 <script src="js/ui-client.js"></script>
-
 </body>
 </html>
