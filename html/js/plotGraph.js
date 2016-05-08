@@ -13,7 +13,7 @@
 			function myFunction() 
 			{
 				var chartTitle;
-			    var common = "http://localhost:8090";
+			    var common = "http://52.39.5.137:8090";
 			    var e = document.getElementById("dropdown1");
 			    var f = document.getElementById("dropdown2");
 

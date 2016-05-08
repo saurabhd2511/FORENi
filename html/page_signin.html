@@ -39,16 +39,41 @@ img.bg {
 	</style>
 </head>
 <body>
+<!--
 	<script type="application/javascript">
 		function loggin(){
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "http://localhost:8090/login", false);
+		xhr.open("POST", "http://localhost:8090/login", false);
 		xhr.send();
 		JSONdata = xhr.responseText;
 		src = JSON.parse(JSONdata);
 			alert(JSONdata);
 			alert(src);
 		}
+	</script>
+-->
+	
+	<script type="application/javascript">
+	function logIn(){
+         var email = document.getElementById("email").value;
+         var password = document.getElementById("password").value;
+         var data =JSON.stringify({email:"email",password:"password"});
+         var xmlhttp = new XMLHttpRequest();
+         xmlhttp.open("POST", "http://52.39.5.137:8090/login");
+         xmlhttp.setRequestHeader("Content-Type", "application/json");
+           xmlhttp.setRequestHeader("Access-Control-Allow-Originss", "*");
+         xmlhttp.onreadystatechange = function () { 
+         	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+         alert(xmlhttp.responseText);
+           	var json = JSON.parse(xmlhttp.responseText);
+         console.log(json.email + ", " + json.password)
+         	}
+         }
+         alert(data).send(data);
+         
+         return false;
+         
+         }
 	</script>
 <!--	<img src="images/texture.jpg" class="bg">-->
 <div class="app app-header-fixed ">
@@ -66,14 +91,14 @@ img.bg {
       </div>
       <div class="list-group list-group-sm">
         <div class="list-group-item" style="border-color:#181A1C;">
-          <input type="email" placeholder="Email" class="form-control no-border" style="background-color:#FFFFFF;color:#181A1C;" required>
+          <input id="email" type="email" placeholder="Email" class="form-control no-border" style="background-color:#FFFFFF;color:#181A1C;" required>
         </div>
 		  <br>
         <div class="list-group-item" style="border-color:#181A1C;">
-           <input type="password" placeholder="Password" class="form-control no-border" style="background-color:#FFFFFF;color:#181A1C;" required>
+           <input id="password" type="password" placeholder="Password" class="form-control no-border" style="background-color:#FFFFFF;color:#181A1C;" required>
         </div>
       </div>
-         <button type="submit" class="btn btn-lg btn-primary btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;" onclick="loggin()">Log in</button>
+         <button type="submit" class="btn btn-lg btn-primary btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;" onclick="logIn()">Log in</button>
       <div class="text-center m-t m-b"><a href="page_forgotpwd.html">Forgot password?</a></div>
       <div class="line line-dashed"></div>
       <p class="text-center"><small>Do not have an account?</small></p>
