@@ -12,7 +12,7 @@
 
 			function myFunction() 
 			{
-
+				var chartTitle;
 			    var common = "http://localhost:8090";
 			    var e = document.getElementById("dropdown1");
 			    var f = document.getElementById("dropdown2");
@@ -62,10 +62,7 @@
 				xhr.open("GET", url, false);
 				xhr.send();
 				JSONdata = xhr.responseText;
-				alert(JSONdata);
 				var src = JSON.parse(JSONdata);
-				alert(src);
-
 				var key;
 				var doom = [];
 				for (key in src) {
@@ -77,7 +74,22 @@
 			    	}
 				}
 
-			
+			document.getElementById("graph").style.display = "block";
+						if(plotb == "multipledestinations"){
+					chartTitle = "Multiple Destinations";
+				}else if(plotb == "multipleSource"){
+					chartTitle = "Multiple Sources";
+				}else if(plotb == "topDestPorts"){
+					chartTitle = "Top Destination Ports";
+				}else if(plotb == "topSourcePorts"){
+					chartTitle = "Top Source Ports";
+				}else if(plotb == "topDestinations"){
+					chartTitle = "Top Destination Ports";
+				}else if(plotb == "acceptedEvents"){
+					chartTitle = "Accepted Events";
+				}else if(plotb == "rejectedEvents"){
+					chartTitle = "Rejected Events";
+				}
 		
 				var processed_json = new Array();
 
@@ -89,15 +101,20 @@
 
 
 				BarChart();
+				
+			
 
 				function BarChart() {
-					document.getElementById("graph").style.display = "block";
-
+					
 			    	var chart = new Highcharts.Chart({
 			        	chart: {
 			            type: 'column',
 			            renderTo : 'are'
 			        	},
+						
+						title:	{
+							text: chartTitle
+						},
 			        	xAxis: {
 			            	type: "category"
 			        	},

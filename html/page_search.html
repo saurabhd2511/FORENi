@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="css/app.css" type="text/css" />
       <link rel="shortcut icon" href="img/favicon.icoa" type="image/x-icon">
       <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	  <link rel="stylesheet" href="css/jquery.auto-complete.css" type="text/css" />
    </head>
    <body>
       <div class="app app-header-fixed ">
@@ -157,59 +158,30 @@
                <h1 class="m-n font-thin h3"><i class="icon-magnifier i-sm m-r-sm"></i> Search</h1>
             </div>
             <div class="wrapper-md">
-               <form action="#" class="m-b-md">
+               <form onsubmit="$('#hero-demo').blur();return false;" action="#" class="m-b-md">
                   <div class="input-group">
-                     <input type="text" class="form-control input-lg" placeholder="Type keyword">
+                     <input id="hero-demo" type="text" class="form-control input-lg" placeholder="Search using keywords">
                      <span class="input-group-btn">
-                     <button class="btn btn-lg btn-default" type="button">Search</button>
+                     <button class="btn btn-lg btn-default" type="button" onclick="search()">Search</button>
                      </span>
                   </div>
                </form>
-               <p class="m-b-md"><strong>var.length</strong> Results found for: <strong>var.name</strong></p>
+				<label id="times"></label> results found for <label id="resName"></label> 
                <div class="tab-container">
                   <ul class="nav nav-tabs">
-                     <li class="active"><a href data-toggle="tab" data-target="#tab_1">All <span class="badge badge-sm m-l-xs">16</span></a></li>
+                     <li class="active"><a href data-toggle="tab" data-target="#tab_1">All <span class="badge badge-sm m-l-xs"><label id="times2"></label></span></a></li>
                   </ul>
                   <tabset>
                      <div class="tab-content">
                         <div class="tab-pane active" id="tab_1">
                            <ul class="list-group no-borders pull-in m-b-none">
                               <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac </a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-primary pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-primary"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
+                                 <p id="searchTitle"><strong></strong></p>
+                                 <div id="searchResult"></div>
+                                 
                               </li>
-                              <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Vestibulum ullamcorper sodales nisi nec condimentum</a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-info pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-info"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
-                              </li>
-                              <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Mauris convallis mauris at pellentesque volutpat</a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-info pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-info"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
-                              </li>
-                              <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Phasellus at ultricies neque, quis malesuada augu</a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-info pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-info"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
-                              </li>
-                              <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Morbi nec nunc condimentum, egestas dui nec, fermentum diam</a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-info pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-info"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
-                              </li>
-                              <li class="list-group-item">
-                                 <a href="#" class="h4 text-primary m-b-sm m-t-sm block">Vestibulum ullamcorper sodales nisi nec condimentum Mauris convallis</a>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin egestas dui nec, fermentum diam. Vivamus vel tincidunt libero, vitae elementum ligula venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum</p>
-                                 <p><span class="label bg-info pos-rlt m-r inline wrapper-xs"><i class="arrow right arrow-info"></i> Tags:</span> <a href class="m-r-sm">admin</a> <a href>app</a>
-                                 </p>
-                              </li>
+                  
+                             
                            </ul>
                         </div>
                      </div>
@@ -225,6 +197,7 @@
          </footer>
       </div>
 	   </div>
+	   
       <script src="../libs/jquery/jquery/dist/jquery.js"></script>
       <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
       <script src="js/ui-load.js"></script>
@@ -233,5 +206,96 @@
       <script src="js/ui-nav.js"></script>
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
+	  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>	   	
+	  <script src="js/jquery.auto-complete.min.js"></script>
+
+	   <script type="application/javascript">
+		function search(){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "http://localhost:8090/auth/userActivity", false);
+		xmlhttp.send();
+		objectJSON = xmlhttp.responseText;
+		stringJSON = JSON.parse(objectJSON);
+		for(var i = 0; i < stringJSON.length; i++) {
+    	delete stringJSON[i]['_id'];
+		}
+			var stTime_arr = [];
+			var srcNm_arr = [];
+			var hstip_arr = [];
+			var dstNm_arr = [];
+			var dstip_arr = [];
+			var stxt_arr = [];
+			var data = JSON.stringify(stringJSON);
+			for(var i = 0; i<stringJSON.length;i++){
+				var stTime = stringJSON[i]['startTime'];
+				var srcNm = stringJSON[i]['sourceName'];
+				var hstip = stringJSON[i]['hostIP'];
+				var dstNm = stringJSON[i]['destName'];
+				var dstip = stringJSON[i]['destIP'];
+				var stxt = stringJSON[i]['severityText'];
+				
+				stTime_arr.push(stTime + '<br />');
+				srcNm_arr.push(srcNm + '<br />');
+				hstip_arr.push(hstip + '<br />');
+				dstip_arr.push(dstip + '<br />');
+				dstNm_arr.push(dstNm + '<br />');
+				stxt_arr.push(stxt);
+			}
+			var inp = document.getElementById("hero-demo").value;
+			if(inp == "Start Time"){
+				document.getElementById("searchResult").innerHTML = stTime_arr;
+				document.getElementById("searchTitle").textContent = "Start Time";
+				document.getElementById("times").textContent = stTime_arr.length;
+				document.getElementById("times2").textContent = stTime_arr.length;
+				document.getElementById("resName").textContent = "Start Time"
+			}else if(inp == "Source Name"){
+				document.getElementById("searchResult").innerHTML = srcNm_arr;
+				document.getElementById("searchTitle").textContent = "Source Name";
+				document.getElementById("times").textContent = srcNm_arr.length;
+				document.getElementById("times2").textContent = srcNm_arr.length;
+				document.getElementById("resName").textContent = "Source Name"
+			}else if(inp == "Host IP"){
+				document.getElementById("searchResult").innerHTML = hstip_arr;
+				document.getElementById("searchTitle").textContent = "Host IP";
+				document.getElementById("times").textContent = hstip_arr.length;
+				document.getElementById("times2").textContent = hstip_arr.length;
+				document.getElementById("resName").textContent = "Host IP"
+			}else if(inp == "Destination Name"){
+				document.getElementById("searchResult").innerHTML = dstNm_arr;
+				document.getElementById("searchTitle").textContent = "Destination Name";
+				document.getElementById("times").textContent = dstNm_arr.length;
+				document.getElementById("times2").textContent = dstNm_arr.length;
+				document.getElementById("resName").textContent = "Destination Name"
+			}else if(inp == "Destination IP"){
+				document.getElementById("searchResult").innerHTML = dstip_arr;
+				document.getElementById("searchTitle").textContent = "Destination IP";
+				document.getElementById("times").textContent = dstip_arr.length;
+				document.getElementById("times2").textContent = dstip_arr.length;
+				document.getElementById("resName").textContent = "Destination IP"
+			}else if(inp == "Severity Text"){
+				document.getElementById("searchResult").innerHTML = stxt_arr + "<br>";
+				document.getElementById("searchTitle").textContent = "Severity Text";
+				document.getElementById("times").textContent = stxt_arr.length;
+				document.getElementById("times2").textContent = stxt_arr.length;
+				document.getElementById("resName").textContent = "Severity Text"
+			}
+			
+		}
+			
+		 $(function(){
+            $('#hero-demo').autoComplete({
+                minChars: 1,
+                source: function(term, suggest){
+                    term = term.toLowerCase();
+                    var choices = ['Start Time', 'Source Name', 'Host IP', 'Destination Name', 'Destination IP', 'Severity Text'];
+                    var suggestions = [];
+                    for (i=0;i<choices.length;i++)
+                        if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+                    suggest(suggestions);
+                }
+            });
+        });
+		
+	</script>
    </body>
 </html>
