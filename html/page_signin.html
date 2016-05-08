@@ -39,55 +39,21 @@ img.bg {
 	</style>
 </head>
 <body>
-<!--
-	<script type="application/javascript">
-		function loggin(){
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "http://localhost:8090/login", false);
-		xhr.send();
-		JSONdata = xhr.responseText;
-		src = JSON.parse(JSONdata);
-			alert(JSONdata);
-			alert(src);
-		}
-	</script>
--->
 	
-	<script type="application/javascript">
-	function logIn(){
-         var email = document.getElementById("email").value;
-         var password = document.getElementById("password").value;
-         var data =JSON.stringify({email:"email",password:"password"});
-         var xmlhttp = new XMLHttpRequest();
-         xmlhttp.open("POST", "http://52.39.5.137:8090/login");
-         xmlhttp.setRequestHeader("Content-Type", "application/json");
-           xmlhttp.setRequestHeader("Access-Control-Allow-Originss", "*");
-         xmlhttp.onreadystatechange = function () { 
-         	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-         alert(xmlhttp.responseText);
-           	var json = JSON.parse(xmlhttp.responseText);
-         console.log(json.email + ", " + json.password)
-         	}
-         }
-         alert(data).send(data);
-         
-         return false;
-         
-         }
-	</script>
-<!--	<img src="images/texture.jpg" class="bg">-->
 <div class="app app-header-fixed ">
-  
-
 <div id="loginModl" class="container w-xxl w-auto-xs">
   <a href class="navbar-brand block m-t">ForenI</a>
   <div class="m-b-lg">
     <div class="wrapper text-center">
       <strong>Sign in to you the app</strong>
     </div>
-    <form name="form" class="form-validation" type="post" action="home.html">
-      <div class="text-danger wrapper text-center">
-          
+	  
+	  
+	  
+<!--<form name="form" class="form-validation" onsubmit="return loggin()">-->
+	  <form name="form" class="form-validation" type="post" action="home.html">      
+		
+	<div class="text-danger wrapper text-center">  
       </div>
       <div class="list-group list-group-sm">
         <div class="list-group-item" style="border-color:#181A1C;">
@@ -98,11 +64,13 @@ img.bg {
            <input id="password" type="password" placeholder="Password" class="form-control no-border" style="background-color:#FFFFFF;color:#181A1C;" required>
         </div>
       </div>
-         <button type="submit" class="btn btn-lg btn-primary btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;" onclick="logIn()">Log in</button>
-      <div class="text-center m-t m-b"><a href="page_forgotpwd.html">Forgot password?</a></div>
+		<button type="submit" class="btn btn-lg btn-primary btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;" onclick="loggin()">Log in</button>
+<!--         <input type="submit" class="btn btn-lg btn-primary btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;">-->
       <div class="line line-dashed"></div>
+<!--
       <p class="text-center"><small>Do not have an account?</small></p>
       <a href="page_signup.html" class="btn btn-lg btn-default btn-block" style="background-color:#181A1C;color:#FECE1A;border-color:#181A1C;">Create an account</a>
+-->
     </form>
   </div>
   <div class="text-center">
@@ -123,6 +91,23 @@ img.bg {
 <script src="js/ui-nav.js"></script>
 <script src="js/ui-toggle.js"></script>
 <script src="js/ui-client.js"></script>
-
+<script type="application/javascript">
+		function loggin(){
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var url = 	"http://52.39.5.137:8090/login?email=" +  email + "&password=" + password;
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", url, false);
+			xhr.send();
+			JSONdata = xhr.responseText;
+			alert(JSONdata);
+			alert(JSONdata.length);
+			if(JSONdata.length<10){
+				alert("Wrong Username Password Combo");
+			}else{
+				window.location.href="home.html";
+			}
+		}
+	</script>
 </body>
 </html>

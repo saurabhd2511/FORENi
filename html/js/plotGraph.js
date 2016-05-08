@@ -102,7 +102,10 @@
 
 				BarChart();
 				
-			
+//				document.getElementById("clickme").onclick = function(){
+//					PieChart();
+//				}
+//			
 
 				function BarChart() {
 					
@@ -126,6 +129,40 @@
 
 
 				}
+				
+				
+				function PieChart(){
+    $('#are').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: chartTitle
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            data: processed_json
+        }]
+    });
+			}
 
 			}
 
@@ -135,17 +172,17 @@
 			
 
 
-			// Blocking IP
+//			 Blocking IP
 
-			// function BlockIP() {
-			//     var ip = document.getElementById("block_ip").value;
+			 function BlockIP() {
+			     var ip = document.getElementById("block_ip").value;
 
-			//     var xhr = new XMLHttpRequest();
+			     var xhr = new XMLHttpRequest();
 
-			//     xhr.open("GET", "http://localhost:8090/blockIP?ip=" + ip, false);
-			//     xhr.send();
-			//     var JSONdata = xhr.responseText;
+			     xhr.open("GET", "http://52.39.5.137:8090/blockIP?ip=" + ip, false);
+			     xhr.send();
+			     var JSONdata = xhr.responseText;
 
-			//     alert(JSONdata);
+			     alert(JSONdata);
 
-			// }
+			 }
