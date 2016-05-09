@@ -213,7 +213,7 @@
 										</div>
 										<label  class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:  </strong></label>
 										<div class="col-sm-4">
-											<input type="text" id="ip" class="form-control" required pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}">                        
+											<input type="text" id="ip" class="form-control">                        
 										</div>
 									</div>
 								</div>
@@ -281,7 +281,14 @@
 							Graphs
 						</div>
 						<div class="row">
-							<div id="are" class="col-sm-3" style="width:100%">
+<!--
+							<div class="col-md-12">
+							<label>Select Type of Graph</label>
+							<a onclick="return PieChart()"><img src="img/pie.png"></a>
+							<a onclick="return BarChart()"><img src="img/bar.png"></a>
+							</div>
+-->
+							<div id="GraphContainer" class="col-sm-3" style="width:100%">
 							</div>
 							<div class="row">
 								<br><br>	
