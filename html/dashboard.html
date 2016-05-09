@@ -14,10 +14,12 @@
 		<link rel="shortcut icon" href="img/favicon.icoa" type="image/x-icon">
 		<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>      
 		<script src="http://code.highcharts.com/highcharts.js"></script>
 		<script src="http://code.highcharts.com/modules/exporting.js"></script>
 		<script src="js/plotGraph.js" type="application/javascript"></script>
+		<script src="js/sweetalert.min.js"></script> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -52,7 +54,7 @@
 					<i class="icon-user fa-fw"></i>
 					</a>
 				</div>
-				<a href="page_lockme.html" style="margin-left:480px"><img src="images/logoff.png"></a>
+				<a href="page_lockme.html" style="margin-left:42%"><img src="images/logoff.png"></a>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
@@ -197,11 +199,11 @@
 					<div class="panel-body">
 						<div class="wrapper-md">
 							<div class="row">
-								<label class="col-sm-1 control-label"><strong>Anomaly : </strong></label>
+								<div class="form-group">
+								<label class="col-sm-1 control-label"><strong>Anomaly :</strong></label>
 								<div class="col-sm-4">
-									&nbsp;
 									<select id="dropdown1" name="account" multiple class="form-control m-b uitip">
-										<option title="Source targetting multiple destinations" id="multipledestinations" value="multipleDestination">Multiple Destinations</option>
+										<option title="Source targetting multiple destinations" value="multipleDestination">Multiple Destinations</option>
 										<option title="Destination targetted by multiple sources." value="multipleSource">Multiple Source</option>
 										<option title="Top destination ports." value="topDestPorts">Top Destination Ports</option>
 										<option title="Top source ports." value="topSourcePorts">Top Source Ports</option>
@@ -210,11 +212,11 @@
 										<option title="Total rejected traffic events." value="rejectedEvents">Rejected Events</option>
 									</select>
 								</div>
-								<label class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:  </strong></label>
+								<label  class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:  </strong></label>
 								<div class="col-sm-4">
-									&nbsp;
-									<input type="text" id="ip" class="form-control">                        
+									<input type="text" id="ip" class="form-control" required pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}">                        
 								</div>
+							</div>
 							</div>
 							<br>
 							<div class="row">
@@ -222,10 +224,15 @@
 									<button id="selectChoice1" onclick="myFunction()" class="btn btn-success btn-lg"><strong>Enter</strong></button>
 								</center>
 							</div>
+							
 						</div>
 						<br>
 					</div>
 				</div>
+				
+				<!-- Authentication Details Div -->
+
+
 				<div id="details2" class="panel panel-default" style="display:none">
 					<div id="enter_the_details2" class="panel-heading font-bold">
 						<center>
@@ -235,23 +242,30 @@
 					<div class="panel-body">
 						<div class="wrapper-md">
 							<div class="row">
-								<label class="col-sm-1 control-label"><strong>Anomaly : </strong></label>
-								<div class="col-sm-4">
-									&nbsp;
-									<select id="dropdown2" name="account" multiple class="form-control m-b uitip">
-										<option title="Failed login count statistics." value="failedLogin">Failed Login</option>
-										<option title="Destination logins targetted by multiple sources." value="remoteLogin">Remote Login</option>
-										<option title="All authentication activities for user account." value="userActivity">User Activity</option>
-										<option title="All authentication acitivities by source IP." value="sourceIPActivity">Source IP Activity</option>
-										<option title="All authentication activities by destination IP." value="destIPActivity">Destination IP Activity</option>
-										<option title="All authentication acitivities by destination hostname." value="destUserActivity">Destination User Activity</option>
-										<option title="Attempted brute force attacks." value="bruteForce">Brute Force</option>
-									</select>
-								</div>
-								<label class="col-sm-1 col-sm-offset-1 control-label"><strong>UserName : </strong></label>
-								<div class="col-sm-4">
-									&nbsp;
-									<input type="text" id="ip" class="form-control">                        
+								<div class="form-group">
+								<label class="col-sm-1 control-label"><strong>Anomaly :</strong></label>
+									<div class="col-sm-4">
+										<select id="dropdown2" name="account" multiple class="form-control m-b uitip">
+											<option title="Failed login count statistics." value="failedLogin">Failed Login</option>
+											<option title="Destination logins targetted by multiple sources." value="remoteLogin">Remote Login</option>
+											<option title="All authentication activities for user account." value="userActivity">User Activity</option>
+											<option title="All authentication acitivities by source IP." value="sourceIPActivity">Source IP Activity</option>
+											<option title="All authentication activities by destination IP." value="destIPActivity">Destination IP Activity</option>
+											<option title="All authentication acitivities by destination hostname." value="destUserActivity">Destination User Activity</option>
+										</select>
+									</div>
+									<div id="ipEntry">	
+										<label class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:</strong></label>
+										<div class="col-sm-4">
+											<input type="text" id="ip" class="form-control">                        
+										</div>
+									</div>
+									<div id="nameEnty" style="display:none;">	
+										<label class="col-sm-1 col-sm-offset-1 control-label"><strong>Username:</strong></label>
+										<div class="col-sm-4">
+											<input type="text" id="ip" class="form-control" required pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}">                        
+										</div>
+									</div>
 								</div>
 							</div>
 							<br>
@@ -265,20 +279,31 @@
 						<br>
 					</div>
 				</div>
+				
+				
+				<!-- Graph Div-->
+				
+				
 				<div id="graph" class="panel panel-default" style="display:none;">
 					<div class="panel-heading font-bold">
 						Graphs
 					</div>
+					
 					<div class="row">
-						<div id="are"  class="col-sm-4 col-offset-sm-2" style="width: 800px">
+						<div id="are" class="col-sm-3" style="width:100%">
 						</div>
 						<div class="row">
-						<button onclick="BlockIP()" class="col-sm-3 col-sm-offset-4 btn btn-danger">Block IP</button>
-							&nbsp;		                       &nbsp;
-                       <input type="text" id="block_ip" class="col-sm-3">
+							<br><br>	
 						</div>
-						<div class="row">
-							<br>	
+						<div class="wrapper-md">
+							<div class="row">
+							<div class="col-sm-3 col-sm-offset-3">
+							<button id="blockip" onclick="BlockIP()" class="btn btn-success btn-lg" >Block IP</button>                       		
+							</div>
+							<div class="col-sm-5 col-sm-offset-1">
+								<input type="text" id="block_ip" class="control-label" style="height:65px;width:200px;margin-top:50px;">
+							</div>
+						</div>
 						</div>
 					</div>
 				</div>
@@ -292,6 +317,7 @@
 			</div>
 		</footer>
 			</div>
+		
 		<script src="../libs/jquery/jquery/dist/jquery.js"></script>
 		<script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="js/ui-load.js"></script>
