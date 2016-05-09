@@ -58,7 +58,7 @@
                      <img src="img/a0.png" alt="...">
                      <i class="on md b-white bottom"></i>
                      </span>
-                     <span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
+                     <span class="hidden-sm hidden-md"><label id="UsersNameNav"></label></span> <b class="caret"></b>
                      </a>
                      <ul class="dropdown-menu animated fadeInRight w">
                         <li>
@@ -145,7 +145,7 @@
       </div>
       <script type="application/javascript">
          function back(){
-			sessionStorage.clear('url');
+			sessionStorage.removeItem('url');
          	window.close();
          	window.location.href = "dashboard.html";
          }	
@@ -158,5 +158,12 @@
       <script src="js/ui-nav.js"></script>
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
+	   <script type="application/javascript">
+		var loginInfo = sessionStorage.getItem('Response');
+		var extData = JSON.parse(loginInfo);
+		document.getElementById("UsersNameNav").innerHTML = extData.name;
+		document.getElementById("UsersNameSide").innerHTML = extData.name;
+		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		</script>
    </body>
 </html>

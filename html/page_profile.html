@@ -47,7 +47,7 @@
                      <img src="img/a0.png" alt="...">
                      <i class="on md b-white bottom"></i>
                      </span>
-                     <span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
+                     <span class="hidden-sm hidden-md"><label id="UsersNameNav"></label></span> <b class="caret"></b>
                      </a>
                      <ul class="dropdown-menu animated fadeInRight w">
                         <li>
@@ -82,10 +82,10 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
                         <span class="clear">
                         <span class="block m-t-sm">
-                        <strong class="font-bold text-lt">Saurabh Deshpande</strong> 
+                        <strong class="font-bold text-lt"><label id="UsersNameSide"></label></strong> 
                         <b class="caret"></b>
                         </span>
-                        <span class="text-muted text-xs block">Security Analyst</span>
+                        <span class="text-muted text-xs block"><label id="OrgName"></label></span>
                         </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight w hidden-folded">
@@ -239,5 +239,12 @@
       <script src="js/ui-nav.js"></script>
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
+	   <script type="application/javascript">
+		var loginInfo = sessionStorage.getItem('Response');
+		var extData = JSON.parse(loginInfo);
+		document.getElementById("UsersNameNav").innerHTML = extData.name;
+		document.getElementById("UsersNameSide").innerHTML = extData.name;
+		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		</script>
    </body>
 </html>

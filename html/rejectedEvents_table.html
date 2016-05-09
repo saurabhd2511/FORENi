@@ -53,47 +53,14 @@
                </div>
 				<a href="page_lockme.html" style="margin-left:480px"><img src="images/logoff.png"></a>
                <ul class="nav navbar-nav navbar-right">
-                  <li class="dropdown">
-                     <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                     <i class="icon-bell fa-fw"></i>
-                     <span class="visible-xs-inline">Notifications</span>
-                     <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
-                     </a>
-                     <div class="dropdown-menu w-xl animated fadeInUp">
-                        <div class="panel bg-white">
-                           <div class="panel-heading b-light bg-light">
-                              <strong>You have <span>2</span> notifications</strong>
-                           </div>
-                           <div class="list-group">
-                              <a href class="list-group-item">
-                                 <span class="pull-left m-r thumb-sm">
-                                 </span>
-                                 <span class="clear block m-b-none">
-                                 IPS Detected<br>
-                                 <small class="text-muted">10 minutes ago</small>
-                                 </span>
-                              </a>
-                              <a href class="list-group-item">
-                              <span class="clear block m-b-none">
-                              OAuth attack breach<br>
-                              <small class="text-muted">1 hour ago</small>
-                              </span>
-                              </a>
-                           </div>
-                           <div class="panel-footer text-sm">
-                              <a href class="pull-right"><i class="fa fa-cog"></i></a>
-                              <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                           </div>
-                        </div>
-                     </div>
-                  </li>
+                 
                   <li class="dropdown">
                      <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
                      <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                      <img src="img/a0.png" alt="...">
                      <i class="on md b-white bottom"></i>
                      </span>
-                     <span class="hidden-sm hidden-md">Saurabh Deshpande</span> <b class="caret"></b>
+                     <span class="hidden-sm hidden-md"><label id="UsersNameNav>"</span> <b class="caret"></b>
                      </a>
                      <!-- dropdown -->
                      <ul class="dropdown-menu animated fadeInRight w">
@@ -140,28 +107,20 @@
                         <table ui-jq="dataTable" ui-options="{
                            aaData:src,
                            aoColumns: [
-                           { mData: 'startTime' },
-                           { mData: 'endTime' },
-                           { mData: 'sourceName' },
-                           { mData: 'hostIP' },
-                           { mData: 'destName' },
                            { mData: 'destIP' },
-                           { mData: 'Message' },
-                           { mData: 'facilityText' },
-                           { mData: 'severityText' }
+									{ mData: 'priorty' },
+									{ mData: 'sourcePort' },
+									{ mData: 'destPort' },
+									{ mData: 'time' }
                            ]
                            }" class="table table-striped b-t b-b">
                            <thead>
                               <tr>
-                                 <th  style="width:20%">Start Time</th>
-                                 <th  style="width:25%">End Time</th>
-                                 <th  style="width:25%">Source Name(s)</th>
-                                 <th  style="width:15%">Host IP</th>
-                                 <th  style="width:20%">Destination Name</th>
-                                 <th  style="width:25%">Destination IP</th>
-                                 <th  style="width:25%">Message(s)</th>
-                                 <th  style="width:15%">Facility Text</th>
-                                 <th  style="width:15%">Severity Text</th>
+                                <th  style="width:20%">Destination IP</th>
+								<th  style="width:25%">Priority</th>
+								 	<th  style="width:25%">Source Port</th>
+									<th  style="width:15%">Destination Port</th>
+									<th  style="width:20%">Time</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -181,7 +140,7 @@
       </div>
       <script type="application/javascript">
          function back(){
-			sessionStorage.clear('url');
+			sessionStorage.removeItem('url');
          	window.close();
          	window.location.href = "dashboard.html";
          }	
@@ -194,5 +153,12 @@
       <script src="js/ui-nav.js"></script>
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
+	   <script type="application/javascript">
+		var loginInfo = sessionStorage.getItem('Response');
+		var extData = JSON.parse(loginInfo);
+		document.getElementById("UsersNameNav").innerHTML = extData.name;
+		document.getElementById("UsersNameSide").innerHTML = extData.name;
+		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		</script>
    </body>
 </html>

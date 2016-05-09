@@ -21,7 +21,6 @@
          xhr.send();
          JSONdata = xhr.responseText;
          src = JSON.parse(JSONdata);
-         
       </script>	
       <div class="app app-header-fixed ">
          <div class="modal-over bg-black">
@@ -29,7 +28,7 @@
                <div class="thumb-lg">
                   <img src="img/a0.png" class="img-circle">
                </div>
-               <p class="h4 m-t m-b">Saurabh.Deshpande</p>
+               <p class="h4 m-t m-b"><label id="UsersNameNav"></label></p>
                <div class="input-group">
                   <input type="password" class="form-control text-sm btn-rounded no-border" placeholder="Enter pwd to continue">
                   <span class="input-group-btn">
@@ -47,5 +46,12 @@
       <script src="js/ui-nav.js"></script>
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
+	   <script type="application/javascript">
+		var loginInfo = sessionStorage.getItem('Response');
+		var extData = JSON.parse(loginInfo);
+		document.getElementById("UsersNameNav").innerHTML = extData.name;
+		document.getElementById("UsersNameSide").innerHTML = extData.name;
+		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		</script>
    </body>
 </html>
