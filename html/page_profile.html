@@ -24,7 +24,7 @@
                <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
                <i class="glyphicon glyphicon-align-justify"></i>
                </button>
-               <a href="index.html" class="navbar-brand text-lt">
+               <a href="home.html" class="navbar-brand text-lt">
                <img src="img/logo2.png" alt=".">
                <span class="hidden-folded m-l-xs">ForenI</span>
                </a>
@@ -56,12 +56,14 @@
                         <li>
                            <a href="page_post.html">Post</a>
                         </li>
+<!--
                         <li>
                            <a href="mail.html">Messenger</a>
                         </li>
+-->
                         <li class="divider"></li>
                         <li>
-                           <a href="index.html">Logout</a>
+                           <a href="index.html" onclick="return logout()">Logout</a>
                         </li>
                      </ul>
                   </li>
@@ -95,12 +97,14 @@
                            <li>
                               <a href="page_post.html">Post</a>
                            </li>
+<!--
                            <li>
                               <a href="mail.html">Messenger</a>
                            </li>
+-->
                            <li class="divider"></li>
                            <li>
-                              <a href="index.html">Logout</a>
+                              <a href="index.html" onclick="return logout()">Logout</a>
                            </li>
                         </ul>
                      </div>
@@ -140,12 +144,14 @@
                            <span>Post</span>
                            </a>
                         </li>
+<!--
                         <li>
                            <a href="mail.html">
                            <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
                            <span>Messenger</span>
                            </a>
                         </li>
+-->
                      </ul>
                      <li class="line dk"></li>
                   </nav>
@@ -165,8 +171,8 @@
                                  </a>
                                  <div class="clear m-b">
                                     <div class="m-b m-t-sm">
-                                       <span class="h3 text-black">Saurabh Deshpande</span>
-                                       <small class="m-l">San Jose, CA</small>
+                                       <span class="h3 text-black"><label id="UsersName"></label></span>
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -180,34 +186,28 @@
                               <div class="form-group">
                                  <label class="col-lg-6 control-label"><strong>Name : </strong></label>
                                  <div class="col-lg-4">
-                                    <p class="form-control-static">Saurabh Deshpande</p>
+                                    <p class="form-control-static"><label id="LoginName"></label></p>
                                  </div>
                                  <br>
                                  <label class="col-lg-6 control-label"><strong>Email : </strong></label>
                                  <div class="col-lg-4">
-                                    <p class="form-control-static">saurabh.deshpande@sjsu.edu</p>
+                                    <p class="form-control-static"><label id="EmailName"></label></p>
                                  </div>
                                  <br>
                                  <label class="col-lg-6 control-label"><strong>Phone Number : </strong></label>
                                  <div class="col-lg-4">
-                                    <p class="form-control-static">669-231-1123</p>
+                                    <p class="form-control-static"><label id="PhoneNumber"></label></p>
                                  </div>
                                  <br>
                                  <label class="col-lg-6 control-label"><strong>Organization Name : </strong></label>
                                  <div class="col-lg-6">
-                                    <p class="form-control-static">San Jose State University</p>
+                                    <p class="form-control-static"><label id="Org"></label></p>
                                  </div>
                                  <br>
-                                 <label class="col-lg-6 control-label"><strong>Security Question : </strong></label>
-                                 <div class="col-lg-6">
-                                    <p class="form-control-static">Which is you favourity Editor?</p>
-                                 </div>
+                         
                               </div>
                               <br>
-                              <label class="col-lg-6 control-label"><strong>Securiry Answer : </strong></label>
-                              <div class="col-lg-6">
-                                 <p class="form-control-static">Sublime Text 3</p>
-                              </div>
+                            
                            </div>
                         </div>
                      </div>
@@ -245,6 +245,10 @@
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
 		document.getElementById("UsersNameSide").innerHTML = extData.name;
 		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		document.getElementById("LoginName").innerHTML = extData.name;
+		document.getElementById("EmailName").innerHTML = extData.email;
+		document.getElementById("PhoneNumber").innerHTML = extData.phoneNumber;
+		document.getElementById("Org").innerHTML = extData.organizationName;
 		</script>
    </body>
 </html>

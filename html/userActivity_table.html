@@ -78,7 +78,7 @@
 							</li>
 							<li class="divider"></li>
 							<li>
-								<a href="index.html">Logout</a>
+								<a href="index.html" onclick="return logout()">Logout</a>
 							</li>
 						</ul>
 					</li>
@@ -169,8 +169,10 @@
 		var loginInfo = sessionStorage.getItem('Response');
 		var extData = JSON.parse(loginInfo);
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
-		document.getElementById("UsersNameSide").innerHTML = extData.name;
-		document.getElementById("OrgName").innerHTML = extData.organizationName;
+		function logout(){
+			sessionStorage.clear();
+			window.location.href = "index.html";
+		}
 		</script>
 </body>
 </html>

@@ -63,12 +63,14 @@
 								<li>
 									<a href="page_post.html">Post</a>
 								</li>
+<!--
 								<li>
 									<a href="mail.html">Messenger</a>
 								</li>
+-->
 								<li class="divider"></li>
 								<li>
-									<a href="index.html">Logout</a>
+									<a href="index.html" onclick="return logout()">Logout</a>
 								</li>
 							</ul>
 						</li>
@@ -101,12 +103,14 @@
 									<li>
 										<a href="page_post.html">Post</a>
 									</li>
+<!--
 									<li>
 										<a href="mail.html">Messenger</a>
 									</li>
+-->
 									<li class="divider"></li>
 									<li>
-										<a href="index.html">Logout</a>
+										<a href="index.html" onclick="return logout()">Logout</a>
 									</li>
 								</ul>
 							</div>
@@ -145,12 +149,14 @@
 									<span>Post</span>
 									</a>
 								</li>
+<!--
 								<li>
 									<a href="mail.html">
 									<i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
 									<span>Messenger</span>
 									</a>
 								</li>
+-->
 							</ul>
 							<li class="line dk"></li>
 						</nav>
@@ -188,6 +194,11 @@
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
 		document.getElementById("UsersNameSide").innerHTML = extData.name;
 		document.getElementById("OrgName").innerHTML = extData.organizationName;
+			
+		function logout(){
+			sessionStorage.clear();
+			window.location.href = "index.html";
+		}
 		</script>
 	</body>
 </html>
