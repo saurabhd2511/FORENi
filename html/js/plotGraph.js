@@ -14,18 +14,23 @@ function openAuth() {
 
 //*********************************** | Function to Display Block IP | ****************************************************
 
-function BlockIP() {
+function BlockIP(){
+	var ipCompare = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     var ip = document.getElementById("block_ip").value;
 
+	if(ip == "" || ip == " " || !ip.match(ipCompare)){
+		sweetAlert("Wrong IP Format", "Please Enter Correct IP!", "error");
+	}else{
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", "http://52.39.5.137:8090/blockIP?ip=" + ip, false);
     xhr.send();
     var JSONdata = xhr.responseText;
-
     alert(JSONdata);
-
+	}
 }
+
+
 
 //*********************************** | Function to Display Graph | ****************************************************
 
@@ -37,6 +42,12 @@ function myFunction() {
     var e = document.getElementById("dropdown1");
     var f = document.getElementById("dropdown2");
     var protocol = document.getElementById("ip").value;
+	var ipCompare = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+   
+	
+	if( protocol == " " || protocol == "" || !protocol.match(ipCompare)){
+		alert("Enter correct IP");
+	}else{
 
     if (document.getElementById("details1").style.display == "block") {
         plota = "firewall";
@@ -195,7 +206,7 @@ function myFunction() {
             }]
         });
     }
-
+}
 }
 
 
