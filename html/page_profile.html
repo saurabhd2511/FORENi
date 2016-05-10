@@ -240,7 +240,7 @@
       <script src="js/ui-toggle.js"></script>
       <script src="js/ui-client.js"></script>
 	   <script type="application/javascript">
-		var loginInfo = sessionStorage.getItem('Response');
+		var loginInfo = localStorage.getItem('Response');
 		var extData = JSON.parse(loginInfo);
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
 		document.getElementById("UsersNameSide").innerHTML = extData.name;
@@ -250,6 +250,7 @@
 		document.getElementById("PhoneNumber").innerHTML = extData.phoneNumber;
 		document.getElementById("Org").innerHTML = extData.organizationName;
 		   function logout(){
+			localStorage.removeItem('Response');
 			sessionStorage.clear();
 			window.location.href = "index.html";
 		}

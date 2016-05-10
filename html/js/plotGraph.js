@@ -112,9 +112,8 @@ function myFunction() {
     }
 
     var processed_json = new Array();
-
-
-    var processed_json = new Array();
+	
+	
     $.map(doom, function(obj, i) {
         processed_json.push([obj.ip, parseInt(obj.ratings)]);
     });

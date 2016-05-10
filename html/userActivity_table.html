@@ -2,7 +2,7 @@
 <html lang="en" class="">
 <head>
   <meta charset="utf-8" />
-  <title>ForenI | Dashboard</title>
+  <title>ForenI | User Activity Table</title>
   <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
@@ -166,10 +166,16 @@
 <script src="js/ui-toggle.js"></script>
 <script src="js/ui-client.js"></script>
 	<script type="application/javascript">
-		var loginInfo = sessionStorage.getItem('Response');
+		jQuery( document ).ready(function( $ ) {
+			if(window.localStorage.getItem("Response") == null){
+					window.location.href="page_signin.html";
+				}
+			});
+		var loginInfo = localStorage.getItem('Response');
 		var extData = JSON.parse(loginInfo);
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
 		function logout(){
+			localStorage.removeItem('Response');
 			sessionStorage.clear();
 			window.location.href = "index.html";
 		}

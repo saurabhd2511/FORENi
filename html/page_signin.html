@@ -107,7 +107,7 @@ img.bg {
 				
       		if(data.email!=null){
 				window.location.href = "home.html"
-				sessionStorage.setItem("Response",res);
+				localStorage.setItem("Response",res);
       		}
       		else{
 				sweetAlert("Error", "Incorrect username or password!", "error");

@@ -304,12 +304,18 @@
 		
 	</script>
 	   <script type="application/javascript">
-		var loginInfo = sessionStorage.getItem('Response');
+		   jQuery( document ).ready(function( $ ) {
+			if(window.localStorage.getItem("Response") == null){
+					window.location.href="page_signin.html";
+				}
+			});
+		var loginInfo = localStorage.getItem('Response');
 		var extData = JSON.parse(loginInfo);
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
 		document.getElementById("UsersNameSide").innerHTML = extData.name;
 		document.getElementById("OrgName").innerHTML = extData.organizationName;
 		   function logout(){
+			localStorage.removeItem('Response');
 			sessionStorage.clear();
 			window.location.href = "index.html";
 		}

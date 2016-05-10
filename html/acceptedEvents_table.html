@@ -141,11 +141,7 @@
 			</footer>
 		</div>
 		<script type="application/javascript">
-			function back(){
-				sessionStorage.removeItem('url');
-				window.close();
-				window.location.href = "dashboard.html";
-			}	
+			
 		</script>	
 		<script src="../libs/jquery/jquery/dist/jquery.js"></script>
 		<script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
@@ -156,14 +152,29 @@
 		<script src="js/ui-toggle.js"></script>
 		<script src="js/ui-client.js"></script>
 		<script type="application/javascript">
-		var loginInfo = sessionStorage.getItem('Response');
+		
+		var loginInfo = localStorage.getItem('Response');
 		var extData = JSON.parse(loginInfo);
 		document.getElementById("UsersNameNav").innerHTML = extData.name;
+		
+		jQuery( document ).ready(function( $ ) {
+			if(window.localStorage.getItem("Response") == null){
+					window.location.href="page_signin.html";
+				}
+			});
+		
+		function back(){
+			sessionStorage.removeItem('url');
+			window.close();	
+			window.location.href = "dashboard.html";
+		}
 			
 		function logout(){
+			localStorage.removeItem('Response');
 			sessionStorage.clear();
 			window.location.href = "index.html";
 		}
+			
 		</script>
 	</body>
 </html>
