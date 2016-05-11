@@ -19,10 +19,9 @@ function BlockIP(){
     var ip = document.getElementById("block_ip").value;
 
 	if(ip == "" || ip == " " || !ip.match(ipCompare)){
-		sweetAlert("Wrong IP Format", "Please Enter Correct IP!", "error");
+		alert("Enter Correct IP");
 	}else{
     var xhr = new XMLHttpRequest();
-
     xhr.open("GET", "http://52.39.5.137:8090/blockIP?ip=" + ip, false);
     xhr.send();
     var JSONdata = xhr.responseText;
@@ -132,6 +131,8 @@ function myFunction() {
     if (plotb == "failedLogin" || plotb == "remoteLogin") {
         PieChart();
     } else {
+//		$('#GraphContainer')[0].focus();
+		$(window).scrollTop($('#GraphContainer').offset().top-20);
         BarChart();
 
     }

@@ -24,6 +24,15 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
 	</head>
 	<body>
+		<script type="application/javascript">
+		jQuery( document ).ready(function( $ ) {
+			$('.uitip').tooltip();
+				
+			if(window.localStorage.getItem("Response") == null){
+					window.location.href="page_signin.html";
+				}
+			});
+		</script>
 		<div class="app app-header-fixed ">
 			<!-- header -->
 			<header id="header" class="app-header navbar" role="menu">
@@ -190,7 +199,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="details1" class="panel panel-default" style="display:block">
+					<div id="details1" class="panel panel-default" style="display:none">
 						<div id="enter_the_details1" class="panel-heading font-bold">
 							<center>                  
 								Enter the Details
@@ -246,24 +255,16 @@
 												<option title="Failed login count statistics." value="failedLogin">Failed Login</option>
 												<option title="Destination logins targetted by multiple sources." value="remoteLogin">Remote Login</option>
 -->
-												<option title="All authentication activities for user account." value="userActivity">User Activity</option>
+												<option title="All authentication activities for user account. Enter Input:Username" value="userActivity">User Activity</option>
 												<option title="All authentication acitivities by source IP." value="sourceIPActivity">Source IP Activity</option>
 												<option title="All authentication activities by destination IP." value="destIPActivity">Destination IP Activity</option>
-												<option title="All authentication acitivities by destination hostname." value="destUserActivity">Destination User Activity</option>
+												<option title="All authentication acitivities by destination hostname. Enter Input:Username" value="destUserActivity">Destination User Activity</option>
 											</select>
 										</div>
-										<div id="ipEntry">
 											<label class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:</strong></label>
 											<div class="col-sm-4">
 												<input type="text" id="ip" class="form-control">                        
 											</div>
-										</div>
-										<div id="nameEnty" style="display:none;">
-											<label class="col-sm-1 col-sm-offset-1 control-label"><strong>Username:</strong></label>
-											<div class="col-sm-4">
-												<input type="text" id="ip" class="form-control" required pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}">                        
-											</div>
-										</div>
 									</div>
 								</div>
 								<br>
@@ -328,13 +329,6 @@
 		<script src="js/ui-client.js"></script>
 		<script src="js/sweetalert2.min.js"></script>
 		<script type="application/javascript">
-			jQuery( document ).ready(function( $ ) {
-			$('.uitip').tooltip();
-				
-			if(window.localStorage.getItem("Response") == null){
-					window.location.href="page_signin.html";
-				}
-			});
 			var loginInfo = localStorage.getItem('Response');
 			var extData = JSON.parse(loginInfo);
 			document.getElementById("UsersNameNav").innerHTML = extData.name;
