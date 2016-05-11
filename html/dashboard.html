@@ -199,7 +199,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="details1" class="panel panel-default" style="display:none">
+					<div id="details1" class="panel panel-default" style="display:block">
 						<div id="enter_the_details1" class="panel-heading font-bold">
 							<center>                  
 								Enter the Details
@@ -221,16 +221,16 @@
 												<option title="Total rejected traffic events." value="rejectedEvents">Rejected Events</option>
 											</select>
 										</div>
-										<label  class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:  </strong></label>
+										<label  class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:</strong></label>
 										<div class="col-sm-4">
-											<input type="text" id="ip" class="form-control">                        
+											<input type="text" id="ip1" class="form-control">                        
 										</div>
 									</div>
 								</div>
 								<br>
 								<div class="row">
 									<center>
-										<button id="selectChoice1" onclick="myFunction()" class="btn btn-success btn-lg"><strong>Enter</strong></button>
+										<button id="selectChoice1" onclick="myFunction1()" class="btn btn-success btn-lg"><strong>Enter</strong></button>
 									</center>
 								</div>
 							</div>
@@ -251,26 +251,22 @@
 										<label class="col-sm-1 control-label"><strong>Anomaly :</strong></label>
 										<div class="col-sm-4">
 											<select id="dropdown2" name="account" multiple class="form-control m-b uitip">
-<!--
-												<option title="Failed login count statistics." value="failedLogin">Failed Login</option>
-												<option title="Destination logins targetted by multiple sources." value="remoteLogin">Remote Login</option>
--->
-												<option title="All authentication activities for user account. Enter Input:Username" value="userActivity">User Activity</option>
+												<option title="All authentication activities for user account." value="userActivity">User Activity</option>
 												<option title="All authentication acitivities by source IP." value="sourceIPActivity">Source IP Activity</option>
 												<option title="All authentication activities by destination IP." value="destIPActivity">Destination IP Activity</option>
-												<option title="All authentication acitivities by destination hostname. Enter Input:Username" value="destUserActivity">Destination User Activity</option>
+												<option title="All authentication acitivities by destination hostname." value="destUserActivity">Destination User Activity</option>
 											</select>
 										</div>
-											<label class="col-sm-1 col-sm-offset-1 control-label"><strong>IP Address:</strong></label>
-											<div class="col-sm-4">
-												<input type="text" id="ip" class="form-control">                        
-											</div>
+										<label class="col-sm-1 col-sm-offset-1 control-label"><strong>Username:</strong></label>
+										<div class="col-sm-4">
+												<input type="text" id="ip2" class="form-control">                        
+										</div>
 									</div>
 								</div>
 								<br>
 								<div class="row">
 									<center>
-										<button id="selectChoice2" onclick="myFunction()" class="btn btn-success btn-lg"><strong>Enter</strong></button>
+										<button id="selectChoice2" onclick="myFunction2()" class="btn btn-success btn-lg"><strong>Enter</strong></button>
 									</center>
 								</div>
 							</div>
@@ -329,6 +325,7 @@
 		<script src="js/ui-client.js"></script>
 		<script src="js/sweetalert2.min.js"></script>
 		<script type="application/javascript">
+			
 			var loginInfo = localStorage.getItem('Response');
 			var extData = JSON.parse(loginInfo);
 			document.getElementById("UsersNameNav").innerHTML = extData.name;
